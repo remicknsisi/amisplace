@@ -1,0 +1,17 @@
+# Ignore node modules
+node_modules/
+
+# Ignore build folder
+.build/
+dist/
+
+# Ignore any logs
+*.log
+
+# Ignore any auto-generated files
+*.generated.*
+
+# If using Next.js, ignore the built .next folder
+.next/
+
+**/*.js
