@@ -10,7 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "prettier": "yarn prettier . --write"
+    "prettier": "prettier . --write"
   },
   "dependencies": {
     "next": "^13.5.4",
