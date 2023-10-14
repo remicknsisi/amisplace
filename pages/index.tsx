@@ -1,5 +1,12 @@
 import React from "react";
 
+import Navbar from "../src/components/common/Navbar";
+
 export default function Homepage() {
-  return <h1>Hello, Amisplace!</h1>;
+    return (
+        <>
+            <Navbar />
+            <h1>Hello, Mister Andrew.</h1>
+        </>
+    );
 }

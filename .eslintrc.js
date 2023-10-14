@@ -5,6 +5,7 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
+    "plugin:jsx-a11y/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -27,7 +28,11 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
+    "eol-last": ["error", "always"],
+    indent: ["error", 4],
+    "no-unreachable": "error",
     semi: "error",
+    "space-before-function-paren": ["error", {"anonymous": "always", "named": "never", "asyncArrow": "always"}],
   },
   settings: {
     react: {
