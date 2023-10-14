@@ -6,7 +6,6 @@ export default function Homepage() {
     return (
         <>
             <Navbar />
-            <h1>Hello, Mister Andrew.</h1>
         </>
     );
 }
