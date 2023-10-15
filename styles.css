@@ -2,6 +2,24 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* Fonts */
+
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 50% 30%; /* Adjust as needed to get the desired curve */
+}
+
+.caption {
+    position: absolute;
+    bottom: 10px;
+    left: 25px;
+    color: #fff;
+    background-color: transparent; 
+    padding: 5px;
+    border-radius: 5px;
 }

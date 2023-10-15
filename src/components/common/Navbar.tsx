@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+
+import HamburgerIcon from "../../../public/assets/logos/hamburger_icon";
 
 const Navbar = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     return (
         <div className="px-5 md:px-10">
             <div className="w-full max-w-7xl mx-auto">
@@ -14,10 +18,9 @@ const Navbar = () => {
                             alt="Logo for Amisplace"
                         />
                     </a>
-                    {/* TODO: Add mobile hamburger menu or something else */}
                     <nav
                         role="navigation"
-                        className="flex justify-end float-right"
+                        className="hidden md:flex justify-end float-right"
                     >
                         <a
                             href="/join"
@@ -32,6 +35,19 @@ const Navbar = () => {
                             About us
                         </a>
                     </nav>
+                    <div className="block w-20 pt-[20px] pb-[22px] pl-[22px] md:hidden">
+                        <div className="w-6 h-6 ml-auto">
+                            <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                                {isMenuOpen ? (
+                                    <span className="text-[2.25rem] font-light leading-[.4] text-[#2e2f2f]">
+                                        &times;
+                                    </span>
+                                ) : (
+                                    <HamburgerIcon />
+                                )}
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
