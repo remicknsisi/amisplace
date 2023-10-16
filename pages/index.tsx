@@ -2,6 +2,8 @@ import React from "react";
 
 import Benefits from "../src/components/homepage/Benefits";
 import CTA from "../src/components/homepage/CTA";
+import FAQs from "../src/components/homepage/FAQs";
+import Footer from "../src/components/homepage/Footer";
 import Hero from "../src/components/homepage/Hero";
 import Listings from "../src/components/homepage/Listings";
 import Navbar from "../src/components/common/Navbar";
@@ -18,6 +20,8 @@ export default function Homepage() {
             <Types />
             <Process />
             <CTA />
+            <FAQs />
+            <Footer />
         </>
     );
 }

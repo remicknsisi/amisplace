@@ -47,9 +47,7 @@ const Hero = () => {
                             <h1
                                 className={`leading-[1.1] text-[2.5rem] md:text-[3.125rem] xl:text-[3.4375rem] tracking-[0.00625em] font-semibold ${poppins.className}`}
                             >
-                                <span className="block popppins">
-                                    Staying at a
-                                </span>
+                                <span className="block">Staying at a</span>
                                 <span className="block">
                                     friend&apos;s made
                                 </span>

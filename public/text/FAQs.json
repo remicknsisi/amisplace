@@ -1,0 +1,24 @@
+{
+    "faqs": [
+        {
+            "question": "Are there any fees I should know about?",
+            "answer": "Nope! There are absolutely no fees to be a part of Amisplace. No fees to join and no service fees when we help you find a successful match."
+        },
+        {
+            "question": "Then how do you make money?",
+            "answer": "We currently don't make money from this. We are passionate about creating an affordable, safe, and sustainable way to travel, so the best gift you can give us is to share this with your dearest friends."
+        },
+        {
+            "question": "Do I need to become both a host and a guest?",
+            "answer": "It's up to you! We welcome anyone who wants to be a part of Amisplace, whether that's being a host, guest, connection, or all of the above."
+        },
+        {
+            "question": "How do I see available places?",
+            "answer": "You must be a member to access our exclusive listings page."
+        },
+        {
+            "question": "I'd like to host and put my place up. How do I do so?",
+            "answer": "Once you become a member, look out for an email which provides information on how to add your home to our listings page. We'll help you get started right away!"
+        }
+    ]
+}
