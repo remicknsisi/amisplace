@@ -29,7 +29,7 @@ const Process = () => {
                                     duration: 1,
                                     delay: 0.25,
                                 }}
-                                className="flex justify-end"
+                                className="flex justify-center md:justify-end"
                             >
                                 <div className="h-[90%] w-[90%]">
                                     <img
@@ -49,7 +49,7 @@ const Process = () => {
                                     duration: 1,
                                     delay: 0.25,
                                 }}
-                                className="flex justify-end"
+                                className="flex justify-center md:justify-end"
                             >
                                 <div className="h-[90%] w-[90%]">
                                     <img

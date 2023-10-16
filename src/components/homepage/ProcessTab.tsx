@@ -2,6 +2,8 @@ import React from "react";
 
 import { motion } from "framer-motion";
 
+import ProcessTabRow from "./ProcessTabRow";
+
 interface ProcessTabProps {
     activeTab: string;
     setActiveTab: (arg: string) => void;
@@ -58,83 +60,34 @@ const ProcessTab = ({ activeTab, setActiveTab }: ProcessTabProps) => {
                         hidden: { opacity: 0, scale: 0.5 },
                     }}
                 >
-                    <div className="mt-8">
-                        <div className="flex mb-4">
-                            <div className="flex flex-none rounded-full bg-lightGreen-50 justify-center items-center w-11 h-11 mr-8">
-                                <img
-                                    src="/assets/logos/marketplace.svg"
-                                    alt="Marketplace icon"
-                                />
-                            </div>
-                            <div className="text-left">
-                                <h3 className="mb-2 text-lg font-bold">
-                                    Marketplace (Members Hub)
-                                </h3>
-                                <p>
-                                    Be in the know with access to an exclusive
-                                    listings page, new rentals, and featured
-                                    cities as an Amisplace member.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mt-2">
-                        <div className="flex mb-4">
-                            <div className="flex flex-none rounded-full bg-lightGreen-50 justify-center items-center w-11 h-11 mr-8">
-                                <img
-                                    src="/assets/logos/message.svg"
-                                    alt="Marketplace icon"
-                                />
-                            </div>
-                            <div className="text-left">
-                                <h3 className="mb-2 text-lg font-bold">
-                                    Message us
-                                </h3>
-                                <p>
-                                    See a place that catches your eye? Send us a
-                                    message.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mt-2">
-                        <div className="flex mb-4">
-                            <div className="flex flex-none rounded-full bg-lightGreen-50 justify-center items-center w-11 h-11 mr-8">
-                                <img
-                                    src="/assets/logos/match.svg"
-                                    alt="Marketplace icon"
-                                />
-                            </div>
-                            <div className="text-left">
-                                <h3 className="mb-2 text-lg font-bold">
-                                    Match
-                                </h3>
-                                <p>
-                                    Get matched up with prospective hosts and
-                                    places that meet all of your needs.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mt-2">
-                        <div className="flex mb-4">
-                            <div className="flex flex-none rounded-full bg-lightGreen-50 justify-center items-center w-11 h-11 mr-8">
-                                <img
-                                    src="/assets/logos/magic.svg"
-                                    alt="Marketplace icon"
-                                />
-                            </div>
-                            <div className="text-left">
-                                <h3 className="mb-2 text-lg font-bold">
-                                    Magic
-                                </h3>
-                                <p>
-                                    Once a connection is made, it’s time to pack
-                                    your bags. Your new home awaits!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <ProcessTabRow
+                        header="Marketplace (Members Hub)"
+                        subtitle="Be in the know with access to an exclusive listings page, new rentals, and featured cities as an Amisplace member."
+                        imgIcon="Marketplace"
+                        imgSrc="/assets/logos/marketplace.svg"
+                        isFirstElement
+                    />
+                    <ProcessTabRow
+                        header="Message us"
+                        subtitle="See a place that catches your eye? Send us a message."
+                        imgIcon="Message"
+                        imgSrc="/assets/logos/message.svg"
+                        isFirstElement
+                    />
+                    <ProcessTabRow
+                        header="Match"
+                        subtitle="Get matched up with prospective hosts and places that meet all of your needs."
+                        imgIcon="Match"
+                        imgSrc="/assets/logos/match.svg"
+                        isFirstElement
+                    />
+                    <ProcessTabRow
+                        header="Magic"
+                        subtitle="Once a connection is made, it’s time to pack your bags. Your new home awaits!"
+                        imgIcon="Magic"
+                        imgSrc="/assets/logos/magic.svg"
+                        isFirstElement
+                    />
                 </motion.div>
             )}
 
@@ -149,83 +102,34 @@ const ProcessTab = ({ activeTab, setActiveTab }: ProcessTabProps) => {
                         hidden: { opacity: 0, scale: 0.5 },
                     }}
                 >
-                    <div className="mt-8">
-                        <div className="flex mb-4">
-                            <div className="flex flex-none rounded-full bg-lightGreen-50 justify-center items-center w-11 h-11 mr-8">
-                                <img
-                                    src="/assets/logos/marketplace.svg"
-                                    alt="Marketplace icon"
-                                />
-                            </div>
-                            <div className="text-left">
-                                <h3 className="mb-2 text-lg font-bold">
-                                    Marketplace (Members Hub)
-                                </h3>
-                                <p>
-                                    Amisplace members get access to an exclusive
-                                    listings page with available places. Add
-                                    your home to our listings page today!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mt-2">
-                        <div className="flex mb-4">
-                            <div className="flex flex-none rounded-full bg-lightGreen-50 justify-center items-center w-11 h-11 mr-8">
-                                <img
-                                    src="/assets/logos/message.svg"
-                                    alt="Marketplace icon"
-                                />
-                            </div>
-                            <div className="text-left">
-                                <h3 className="mb-2 text-lg font-bold">
-                                    Message us
-                                </h3>
-                                <p>
-                                    Fill out a form to add your home to our
-                                    exclusive listings page.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mt-2">
-                        <div className="flex mb-4">
-                            <div className="flex flex-none rounded-full bg-lightGreen-50 justify-center items-center w-11 h-11 mr-8">
-                                <img
-                                    src="/assets/logos/match.svg"
-                                    alt="Marketplace icon"
-                                />
-                            </div>
-                            <div className="text-left">
-                                <h3 className="mb-2 text-lg font-bold">
-                                    Match
-                                </h3>
-                                <p>
-                                    Let us pair you with prospective guests who
-                                    will love your home as much as you do.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mt-2">
-                        <div className="flex mb-4">
-                            <div className="flex flex-none rounded-full bg-lightGreen-50 justify-center items-center w-11 h-11 mr-8">
-                                <img
-                                    src="/assets/logos/magic.svg"
-                                    alt="Marketplace icon"
-                                />
-                            </div>
-                            <div className="text-left">
-                                <h3 className="mb-2 text-lg font-bold">
-                                    Magic
-                                </h3>
-                                <p>
-                                    Once they’re booked, it’s time to get ready
-                                    – your new friends are coming to stay!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <ProcessTabRow
+                        header="Marketplace (Members Hub)"
+                        subtitle="Amisplace members get access to an exclusive listings page with available places. Add your home to our listings page today!"
+                        imgIcon="Marketplace"
+                        imgSrc="/assets/logos/marketplace.svg"
+                        isFirstElement
+                    />
+                    <ProcessTabRow
+                        header="Message us"
+                        subtitle="Fill out a form to add your home to our exclusive listings page."
+                        imgIcon="Message"
+                        imgSrc="/assets/logos/message.svg"
+                        isFirstElement
+                    />
+                    <ProcessTabRow
+                        header="Match"
+                        subtitle="Let us pair you with prospective guests who will love your home as much as you do."
+                        imgIcon="Match"
+                        imgSrc="/assets/logos/match.svg"
+                        isFirstElement
+                    />
+                    <ProcessTabRow
+                        header="Magic"
+                        subtitle="Once they’re booked, it’s time to get ready – your new friends are coming to stay!"
+                        imgIcon="Magic"
+                        imgSrc="/assets/logos/magic.svg"
+                        isFirstElement
+                    />
                 </motion.div>
             )}
         </div>
