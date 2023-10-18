@@ -18,7 +18,7 @@ const CTA = () => {
             <div className="hover:scale-105 transition ease-in-out duration-200">
                 <a
                     href="/join"
-                    className="bg-green text-white rounded-lg py-3 px-11 tracking-wide font-bold hover:bg-darkGreen"
+                    className="bg-green text-white rounded-lg py-3 px-11 tracking-wide font-bold hover:bg-darkGreen transition ease-in-out duration-200"
                 >
                     Travel with Amisplace
                 </a>
