@@ -54,12 +54,14 @@ const Hero = () => {
                                 simple
                             </h1>
                         </div>
-                        <a
-                            href="/join"
-                            className="bg-green text-white rounded-lg py-3 px-11 tracking-wide font-bold hover:scale-105 transition ease-in-out duration-200 hover:bg-darkGreen"
-                        >
-                            Travel with Amisplace
-                        </a>
+                        <div className="hover:scale-105 transition ease-in-out duration-200">
+                            <a
+                                href="/join"
+                                className="bg-green text-white rounded-lg py-3 px-11 tracking-wide font-bold hover:scale-105 transition ease-in-out duration-200 hover:bg-darkGreen"
+                            >
+                                Travel with Amisplace
+                            </a>
+                        </div>
                     </motion.div>
                 </div>
                 <div className="container flex items-center">
