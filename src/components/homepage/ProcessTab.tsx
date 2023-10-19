@@ -13,7 +13,7 @@ const ProcessTab = ({ activeTab, setActiveTab }: ProcessTabProps) => {
     return (
         <div className="flex justify-start flex-col pt-4 w-full h-full max-w-[29rem]">
             <div className="w-full">
-                <div className="flex justify-center ">
+                <div className="flex justify-center">
                     <button
                         className={`w-full h-12 flex justify-center pt-4 pb-12 px-2 ${
                             activeTab === "Guest"
@@ -72,21 +72,21 @@ const ProcessTab = ({ activeTab, setActiveTab }: ProcessTabProps) => {
                         subtitle="See a place that catches your eye? Send us a message."
                         imgIcon="Message"
                         imgSrc="/assets/logos/message.svg"
-                        isFirstElement
+                        isFirstElement={false}
                     />
                     <ProcessTabRow
                         header="Match"
                         subtitle="Get matched up with prospective hosts and places that meet all of your needs."
                         imgIcon="Match"
                         imgSrc="/assets/logos/match.svg"
-                        isFirstElement
+                        isFirstElement={false}
                     />
                     <ProcessTabRow
                         header="Magic"
                         subtitle="Once a connection is made, it’s time to pack your bags. Your new home awaits!"
                         imgIcon="Magic"
                         imgSrc="/assets/logos/magic.svg"
-                        isFirstElement
+                        isFirstElement={false}
                     />
                 </motion.div>
             )}
@@ -114,21 +114,21 @@ const ProcessTab = ({ activeTab, setActiveTab }: ProcessTabProps) => {
                         subtitle="Fill out a form to add your home to our exclusive listings page."
                         imgIcon="Message"
                         imgSrc="/assets/logos/message.svg"
-                        isFirstElement
+                        isFirstElement={false}
                     />
                     <ProcessTabRow
                         header="Match"
                         subtitle="Let us pair you with prospective guests who will love your home as much as you do."
                         imgIcon="Match"
                         imgSrc="/assets/logos/match.svg"
-                        isFirstElement
+                        isFirstElement={false}
                     />
                     <ProcessTabRow
                         header="Magic"
                         subtitle="Once they’re booked, it’s time to get ready – your new friends are coming to stay!"
                         imgIcon="Magic"
                         imgSrc="/assets/logos/magic.svg"
-                        isFirstElement
+                        isFirstElement={false}
                     />
                 </motion.div>
             )}

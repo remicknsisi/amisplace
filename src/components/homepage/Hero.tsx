@@ -57,14 +57,14 @@ const Hero = () => {
                         <div className="hover:scale-105 transition ease-in-out duration-200">
                             <a
                                 href="/join"
-                                className="bg-green text-white rounded-lg py-3 px-11 tracking-wide font-bold hover:bg-darkGreen transition ease-in-out duration-200"
+                                className="bg-green text-white rounded-lg py-3 px-11 tracking-wide font-bold hover:bg-darkGreen"
                             >
                                 Travel with Amisplace
                             </a>
                         </div>
                     </motion.div>
                 </div>
-                <div className="container flex items-center">
+                <div className="flex justify-center">
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -73,7 +73,7 @@ const Hero = () => {
                             duration: 2,
                             delay: 0.375,
                         }}
-                        className="items-center flex-col gap-3 hidden md:flex"
+                        className="items-center md:mb-4 justify-end flex-col gap-3 hidden md:flex"
                     >
                         {images.map((_, index) => (
                             <button
@@ -109,7 +109,7 @@ const Hero = () => {
                         }}
                         className="flex items-center flex-col transition-opacity"
                     >
-                        <div className="image-container h-[22rem] md:h-[33.375rem] ml-0 md:ml-[20px]">
+                        <div className="image-container h-[22rem] rounded-tl-[30vw] md:rounded-tl-[16rem] md:h-[33.375rem] ml-0 md:ml-[20px]">
                             <img
                                 src={images[currentIndex].src}
                                 alt={images[currentIndex].alt}

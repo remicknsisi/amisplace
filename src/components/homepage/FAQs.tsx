@@ -19,11 +19,9 @@ const FAQs = () => {
         }
     };
     return (
-        <div className="flex flex-col items-center text-center px-12 mx-auto md:px-0 md:mx-0 max-w-[660px] md:max-w-none">
-            <div className="px-5 md:px-10 pt-20 pb-5 md:py-20">
-                <div className="flex flex-col items-center justify-center">
-                    <h2 className="font-bold text-4xl mb-8">FAQs</h2>
-                </div>
+        <div className="flex flex-col items-center text-center px-12 mt-20 mx-auto md:px-0 md:mx-0 max-w-[660px] md:max-w-none">
+            <div className="px-5 pb-5">
+                <h2 className="font-bold text-4xl mb-8">FAQs</h2>
             </div>
             <div className="faq-accordion">
                 {faqs.map((item, index) => (
@@ -35,7 +33,7 @@ const FAQs = () => {
                         onToggle={() => toggleRow(index)}
                     />
                 ))}
-                <div className="flex flex-col items-stretch justify-items-center md:w-[54rem] max-w-[54rem]">
+                <div className="flex flex-col items-stretch justify-items-center max-w-[45rem] md:w-[54rem] lg:max-w-[54rem]">
                     <button
                         className="flex items-center md:items-start justify-between pt-6"
                         onClick={() => toggleRow(5)}

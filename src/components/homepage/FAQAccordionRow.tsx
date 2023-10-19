@@ -18,7 +18,7 @@ const FAQAccordionRow = ({
     onToggle,
 }: FAQAccordionRowProps) => {
     return (
-        <div className="flex flex-col items-stretch justify-items-center md:w-[54rem] max-w-[54rem]">
+        <div className="flex flex-col items-stretch justify-items-center max-w-[45rem] md:w-[54rem] lg:max-w-[54rem]">
             <button
                 className="flex items-center md:items-start justify-between pt-6"
                 onClick={onToggle}
@@ -45,7 +45,9 @@ const FAQAccordionRow = ({
                         duration: 0.25,
                     }}
                 >
-                    <p className="text-left mt-6 font-light">{answer}</p>
+                    <p className="text-left mt-6 font-light md:text-lg">
+                        {answer}
+                    </p>
                     <div className="h-px rounded-[100vw] mt-5 bg-gray-200"></div>
                 </motion.div>
             )}

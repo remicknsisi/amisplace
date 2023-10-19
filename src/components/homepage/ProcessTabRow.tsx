@@ -13,7 +13,7 @@ const ProcessTabRow = ({
     subtitle,
     imgSrc,
     imgIcon,
-    isFirstElement = false,
+    isFirstElement,
 }: ProcessTabRowProps) => {
     return (
         <div className={isFirstElement ? "mt-8" : "mt-2"}>
@@ -22,10 +22,10 @@ const ProcessTabRow = ({
                     <img src={imgSrc} alt={`${imgIcon} icon`} />
                 </div>
                 <div className="text-center mt-4 md:mt-0 md:text-left">
-                    <h3 className="mb-2 text-xl md:text-lg font-bold">
+                    <h3 className="mb-2 text-xl md:text-[1.15rem] lg:text-xl font-bold">
                         {header}
                     </h3>
-                    <p>{subtitle}</p>
+                    <p className="font-light">{subtitle}</p>
                 </div>
             </div>
         </div>

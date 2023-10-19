@@ -10,7 +10,7 @@ const Listings = () => {
         <div className="px-5 md:px-10">
             <div className="max-w-[80rem] w-full mx-auto py-14">
                 <div className="flex flex-col text-center">
-                    <div className="flex flex-col mx-auto mb-16 items-center justify-center max-w-[47rem]">
+                    <div className="mx-auto mb-16 items-center justify-center max-w-[47rem]">
                         <h2
                             className={`text-[2.5rem] mb-8 ${poppins.className}`}
                         >

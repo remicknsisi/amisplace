@@ -7,15 +7,13 @@ const Types = () => {
         <div className="px-5 md:px-10">
             <div className="max-w-[80rem] w-full mx-auto py-14">
                 <div className="flex flex-col text-center">
-                    <div className="flex flex-col mx-auto mb-16 items-center justify-center max-w-[47rem]">
-                        <h2
-                            className={`text-[2.5rem] mb-8 ${poppins.className}`}
-                        >
+                    <div className="mx-auto mb-12 items-center justify-center max-w-[47rem]">
+                        <h2 className={`text-[2.5rem] ${poppins.className}`}>
                             You can become
                         </h2>
                     </div>
                     <div className="grid gri-col-1fr md:max-w-[70rem] md:grid-cols-[1fr,1fr,1fr] auto-cols-[1fr] justify-center items-center mx-auto gap-10">
-                        <div className="flex flex-col items-center justify-center text-center">
+                        <div>
                             <h3
                                 className={`text-[2rem] mb-8 ${poppins.className} text-green`}
                             >
@@ -26,7 +24,7 @@ const Types = () => {
                                 while you’re away.
                             </p>
                         </div>
-                        <div className="flex flex-col items-center justify-center text-center">
+                        <div>
                             <h3
                                 className={`text-[2rem] mb-8 ${poppins.className} text-green`}
                             >
@@ -37,7 +35,7 @@ const Types = () => {
                                 unreasonable pricing.
                             </p>
                         </div>
-                        <div className="flex flex-col items-center justify-center text-center">
+                        <div>
                             <h3
                                 className={`text-[2rem] mb-8 ${poppins.className} text-green`}
                             >
