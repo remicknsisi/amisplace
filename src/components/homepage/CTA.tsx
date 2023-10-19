@@ -2,8 +2,8 @@ import React from "react";
 
 const CTA = () => {
     return (
-        <div className="flex flex-col items-center text-center">
-            <div className="flex flex-col px-10 py-14 max-w-[80rem] w-full mx-auto">
+        <div className="text-center">
+            <div className="flex flex-col px-10 py-14 max-w-[80rem] w-full mx-auto items-center">
                 <div className="max-w-[42rem]">
                     <h2 className="font-bold text-4xl mb-8">Interested?</h2>
                     <p className="text-lg font-light">

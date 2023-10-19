@@ -25,6 +25,11 @@ const Hero = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    const imageVariants = {
+        visible: { opacity: 1 },
+        hidden: { opacity: 0 },
+    };
+
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -47,11 +52,11 @@ const Hero = () => {
                             <h1
                                 className={`leading-[1.1] text-[2.5rem] md:text-[3.125rem] xl:text-[3.4375rem] tracking-[0.00625em] font-semibold ${poppins.className}`}
                             >
-                                <span className="block">Staying at a</span>
-                                <span className="block">
+                                <span className="inline md:block">Staying at a </span>
+                                <span className="inline md:block">
                                     friend&apos;s made
                                 </span>
-                                simple
+                                <span> simple</span>
                             </h1>
                         </div>
                         <div className="hover:scale-105 transition ease-in-out duration-200">
@@ -100,50 +105,25 @@ const Hero = () => {
                         ))}
                     </motion.div>
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
+                        className="image-container h-[22rem] rounded-tl-[30vw] md:rounded-tl-[16rem] md:h-[33.375rem] ml-0 md:ml-[20px] relative"
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                        key={currentIndex}
+                        variants={imageVariants}
                         transition={{
-                            ease: "easeInOut",
-                            duration: 2,
-                            delay: 0.375,
+                            duration: .75,
+                            ease: "linear",
                         }}
-                        className="flex items-center flex-col transition-opacity"
                     >
-                        <div className="image-container h-[22rem] rounded-tl-[30vw] md:rounded-tl-[16rem] md:h-[33.375rem] ml-0 md:ml-[20px]">
-                            <img
-                                src={images[currentIndex].src}
-                                alt={images[currentIndex].alt}
-                                className="w-full h-full object-cover"
-                            />
-                            <p className="caption">
-                                {images[currentIndex].location}
-                            </p>
-                        </div>
-                        <div className="flex items-center gap-3 my-6 md:hidden">
-                            {images.map((_, index) => (
-                                <button
-                                    key={index}
-                                    tabIndex={0}
-                                    className={`rounded-full h-4 w-4 ${
-                                        currentIndex === index
-                                            ? "bg-[#409D8C]"
-                                            : "bg-[#409D8C]/[.2]"
-                                    }`}
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        setCurrentIndex(index);
-                                    }}
-                                    onKeyDown={(e) => {
-                                        if (
-                                            e.key === "Enter" ||
-                                            e.key === "Space"
-                                        ) {
-                                            setCurrentIndex(index);
-                                        }
-                                    }}
-                                />
-                            ))}
-                        </div>
+                        <motion.img
+                            src={images[currentIndex].src}
+                            alt={images[currentIndex].alt}
+                            className="w-full h-full object-cover"
+                        />
+                        <p className="caption">
+                            {images[currentIndex].location}
+                        </p>
                     </motion.div>
                 </div>
             </div>
