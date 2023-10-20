@@ -39,7 +39,7 @@ const Hero = () => {
     }, [images.length]);
 
     return (
-        <div className="bg-lightGreen-50 px-5 md:px-10">
+        <div className="bg-lightGreen-50 px-5 md:px-10 mt-16">
             <div className="ml-auto mr-auto grid max-w-[80rem] auto-cols-[1fr] grid-cols-[1fr] pt-[4rem] md:grid-cols-[1fr,1fr] md:pt-0 lg:gap-6">
                 <div className="flex flex-col items-center justify-center md:items-start">
                     <motion.div

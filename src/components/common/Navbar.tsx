@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import { motion } from "framer-motion";
+import { poppins } from "../../helpers/loadFont";
 
 import HamburgerIcon from "../../../public/assets/logos/hamburger_icon";
 
@@ -9,7 +10,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="px-5 md:px-10">
+            <div className="px-5 md:px-10 fixed w-full bg-[white] z-[1000] top-0">
                 <div className="mx-auto w-full max-w-7xl">
                     <div className="flex h-16 justify-between">
                         <a
@@ -23,7 +24,7 @@ const Navbar = () => {
                         </a>
                         <nav
                             role="navigation"
-                            className="float-right hidden justify-end md:flex"
+                            className={`float-right hidden justify-end md:flex ${poppins.className}`}
                         >
                             <a
                                 href="/join"
