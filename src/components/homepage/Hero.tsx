@@ -107,7 +107,7 @@ const Hero = () => {
                         ))}
                     </motion.div>
                     <motion.div
-                        className="image-container relative ml-0 h-[22rem] rounded-tl-[30vw] md:ml-[20px] md:h-[29rem] md:rounded-tl-[16rem] lg:h-[32.375rem]"
+                        className="relative overflow-hidden ml-0 h-[22rem] rounded-tl-[30vw] md:ml-[20px] md:h-[29rem] md:rounded-tl-[16rem] lg:h-[32.375rem]"
                         initial="hidden"
                         animate="visible"
                         exit="hidden"

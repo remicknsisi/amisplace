@@ -8,11 +8,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.image-container {
-    position: relative;
-    overflow: hidden;
-}
-
 .caption {
     position: absolute;
     bottom: 10px;
@@ -22,23 +17,3 @@ body {
     padding: 5px;
     border-radius: 5px;
 }
-  
-  .listing-container {
-    position: relative;
-  }
-  
-  .image-caption {
-    position: absolute;
-    bottom: 0;
-  }
-
-  .location-icon {
-    width: 16px;
-    height: 16px;
-    margin-right: 5px;
-    /* If you have an icon, you'd set it as a background-image here */
-    background-image: url('/assets/logos/location-pin.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: inline-block;
-  }

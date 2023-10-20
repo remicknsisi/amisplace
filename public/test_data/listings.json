@@ -1,0 +1,148 @@
+{
+    "listings": [
+      {
+        "location": "Los Angeles, CA",
+        "description": "Charming, light-filled 1BR/1BA apartment",
+        "imgSrc": "https://assets-global.website-files.com/621c490d9f4342349e0db9ea/6531d9ebabbc6ae3b7c8793d_la1.jpg",
+        "area": "Culver City (Prime West LA)",
+        "host": "Shanshan",
+        "available_dates": "October 21 - 27, December 13 - January 12, 2024",
+        "price": "80",
+        "duration": "night",
+        "details_link": "https://photos.app.goo.gl/B7CbYMdqo14qxXsm8",
+        "isAvailable": true
+      },
+      {
+        "location": "Washington D.C.",
+        "description": "Cozy, boho-jungle 1BR/1BA",
+        "imgSrc": "https://assets-global.website-files.com/621c490d9f4342349e0db9ea/6531d89042766ddcb986f345_dc8.jpg",
+        "area": "Rosslyn",
+        "host": "Michael & Thu",
+        "available_dates": "November 15 - January 1, 2024",
+        "price": "50",
+        "duration": "night",
+        "details_link": "https://photos.app.goo.gl/jAv2MGdvL5uLAjd46",
+        "isAvailable": true
+      },
+      {
+        "location": "Big Island, HI",
+        "description": "1BR/1BA private room",
+        "imgSrc": "https://assets-global.website-files.com/621c490d9f4342349e0db9ea/6230f3d2b5885b51562161e0_IMG_3745.jpg",
+        "area": "Hawi",
+        "host": "Suzanne",
+        "available_dates": "Inquire",
+        "price": "75",
+        "duration": "night",
+        "details_link": "https://photos.app.goo.gl/8pm28rDb7mJfams49",
+        "isAvailable": true
+      },
+      {
+        "location": "Brooklyn, NY",
+        "description": "Studio / 1BA",
+        "imgSrc": "https://assets-global.website-files.com/621c490d9f4342349e0db9ea/62320b71c10688413eaac01b_File%2000001.jpg",
+        "area": "Williamsburg",
+        "host": "Rachael",
+        "available_dates": "October 22-25, November 16-19, December 21-30, January 15-March 17",
+        "price": "120",
+        "duration": "night",
+        "details_link": "https://photos.app.goo.gl/be65vfDCxdR7sUeK8",
+        "isAvailable": true
+      },
+      {
+        "location": "Austin, TX",
+        "description": "Cozy and private 1BR/1BA",
+        "imgSrc": "",
+        "area": "Mt. Bonnel Shores",
+        "host": "Carol",
+        "available_dates": "Starting mid-March 2024",
+        "price": "2200",
+        "duration": "month",
+        "details_link": "https://www.amisplace.com/listings#",
+        "isAvailable": true
+      },
+      {
+        "location": "Austin, TX",
+        "description": "1BR/1BA bright and cute home",
+        "imgSrc": "https://assets-global.website-files.com/621c490d9f4342349e0db9ea/652ca276b4f9def31a2dfd32_austin_home-p-800.jpg",
+        "area": "Holly in East Austin",
+        "host": "Amann",
+        "available_dates": "Available starting November 12; Flexible, preferred long stays (3+ weeks)",
+        "price": "75",
+        "duration": "night",
+        "details_link": "https://photos.app.goo.gl/eXUdNBMyvtrHo3NJ7",
+        "isAvailable": true
+      },
+      {
+        "location": "Medellín, Colombia",
+        "description": "Quiet 1BR/1BA in nature with spectacular sunsets",
+        "imgSrc": "https://assets-global.website-files.com/621c490d9f4342349e0db9ea/652ca3b4b4f9def31a2f6db3_colombia-p-800.jpeg",
+        "area": "Santa Elena",
+        "host": "Julia & Julián",
+        "available_dates": "Inquire for availability",
+        "price": "55",
+        "duration": "night",
+        "details_link": "https://photos.app.goo.gl/cAYw57oRffrAegpf8",
+        "isAvailable": true
+      },
+      {
+        "location": "Brooklyn, NY",
+        "description": "1BR/2BA apartment",
+        "imgSrc": "https://assets-global.website-files.com/621c490d9f4342349e0db9ea/649edda1071c9d0cfdf381fb_newyork29497.jpeg",
+        "area": "Crown Heights",
+        "host": "Bel",
+        "available_dates": "Nov 1-8, Nov 25-Dec 13",
+        "price": "150",
+        "duration": "night",
+        "details_link": "https://photos.app.goo.gl/LUXLUNeG38yRELTJ6",
+        "isAvailable": true
+      },
+      {
+        "location": "Austin, TX",
+        "description": "Cute & cozy 2BR/1BA bungalow",
+        "imgSrc": "https://assets-global.website-files.com/621c490d9f4342349e0db9ea/6529f539763ab4f523987ee3_austin_home7-p-800.jpg",
+        "area": "St. Johns in East Austin",
+        "host": "Victoria & Mason",
+        "available_dates": "Starting March 1, 2024",
+        "price": "80",
+        "duration": "night",
+        "details_link": "https://photos.app.goo.gl/3hoQqfSDhz2W9Zrq9",
+        "isAvailable": true
+      },
+      {
+        "location": "Paris, France",
+        "description": "Bright and modern 2BR/1BA apartment",
+        "imgSrc": "https://assets-global.website-files.com/621c490d9f4342349e0db9ea/65277b73bebbd3cdc6eb9662_paris_home9-p-800.jpg",
+        "area": "Batignolles",
+        "host": "Barnabe",
+        "available_dates": "Available year-round; Inquire if interested",
+        "price": "120",
+        "duration": "night",
+        "details_link": "https://photos.app.goo.gl/S3hi3cfyvZdLQoQg7",
+        "isAvailable": true
+      },
+      {
+        "location": "Manhattan, NY",
+        "description": "2BR/2BA central and spacious home",
+        "imgSrc": "https://assets-global.website-files.com/621c490d9f4342349e0db9ea/621d6d82444813adc24c6e70_4cbc15_85e8c21b987a4948bc7d28a7bdbb4488~mv2-p-800.jpeg",
+        "area": "East Village",
+        "host": "Rachel",
+        "available_dates": "November 3-14, December 21-January 2, 2024",
+        "price": "188",
+        "duration": "night",
+        "details_link": "https://photos.app.goo.gl/r6ryLT9GPU2SoyYXA",
+        "isAvailable": true
+      },
+      {
+        "location": "Manhattan, NY",
+        "description": "1BR/1BA apartment",
+        "imgSrc": "https://assets-global.website-files.com/621c490d9f4342349e0db9ea/641c78fa371b0d0db8a4ebf9_manhattan00001-p-800.jpg",
+        "area": "East Village",
+        "host": "Summer",
+        "available_dates": "Oct 21-28, Oct 28-29 [BOOKED], Oct 29-Nov 4, Nov 4-11 [BOOKED]; Inquire for other dates not listed",
+        "price": "150",
+        "duration": "night",
+        "details_link": "https://photos.app.goo.gl/bpT16yQ6qRbdrAUX6",
+        "isAvailable": true
+      }
+    ]
+  }
