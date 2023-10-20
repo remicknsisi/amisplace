@@ -24,6 +24,7 @@ const Listings = () => {
                 </div>
                 <div className="grid gri-col-1fr md:max-w-[70rem] md:grid-cols-[1fr,1fr,1fr] auto-cols-[1fr] justify-center items-center mx-auto gap-10">
                     <motion.div
+                        className="h-full"
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{
@@ -43,6 +44,7 @@ const Listings = () => {
                         />
                     </motion.div>
                     <motion.div
+                        className="h-full"
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{
@@ -62,6 +64,7 @@ const Listings = () => {
                         />
                     </motion.div>
                     <motion.div
+                        className="h-full"
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{

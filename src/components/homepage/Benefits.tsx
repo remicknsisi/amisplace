@@ -24,6 +24,7 @@ const Benefits = () => {
                     </div>
                     <div className="grid grid-col-1fr lg:grid-cols-[1fr,1fr,1fr] auto-cols-[1fr] justify-center items-center mx-auto gap-10">
                         <motion.div
+                            className="h-full"
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{
@@ -40,6 +41,7 @@ const Benefits = () => {
                             />
                         </motion.div>
                         <motion.div
+                            className="h-full"
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{
@@ -56,6 +58,7 @@ const Benefits = () => {
                             />
                         </motion.div>
                         <motion.div
+                            className="h-full"
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{
