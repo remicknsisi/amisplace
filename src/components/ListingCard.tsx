@@ -23,7 +23,7 @@ const ListingCard = ({
         <div className="flex h-full rounded-2xl flex-col justify-between overflow-hidden shadow-[0_4px_18px_rgba(47,48,48,0.1)]">
             <div className="listing-container">
                 <img src={imgPath} alt={imgAlt} className="w-full h-[250px] object-cover" />
-                <div className="image-caption bg-white rounded-tr-2xl font-bold pt-[0.375rem] px-6">
+                <div className="image-caption bg-white rounded-tr-2xl font-bold pt-[0.375rem] px-6 sm:text-xl md:text-lg lg:text-xl">
                     {location}
                 </div>
             </div>

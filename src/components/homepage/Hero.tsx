@@ -40,7 +40,7 @@ const Hero = () => {
 
     return (
         <div className="px-5 md:px-10 bg-lightGreen-50">
-            <div className="grid grid-cols-[1fr] pt-[4rem] md:pt-0 md:grid-cols-[1fr,1fr] auto-cols-[1fr] gap-6 max-w-[80rem] ml-auto mr-auto">
+            <div className="grid grid-cols-[1fr] pt-[4rem] md:pt-0 md:grid-cols-[1fr,1fr] auto-cols-[1fr] lg:gap-6 max-w-[80rem] ml-auto mr-auto">
                 <div className="flex flex-col items-center md:items-start justify-center">
                     <motion.div
                         initial={{ opacity: 0, y: 25 }}
