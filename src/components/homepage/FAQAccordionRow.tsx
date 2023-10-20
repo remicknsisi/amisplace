@@ -1,6 +1,6 @@
 import React from "react";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { poppins } from "../../helpers/loadFont";
 
@@ -36,21 +36,30 @@ const FAQAccordionRow = ({
                     )}
                 </div>
             </button>
-            {isOpen && (
-                <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                        ease: "easeIn",
-                        duration: 0.25,
-                    }}
-                >
-                    <p className="mt-6 text-left font-light md:text-lg">
-                        {answer}
-                    </p>
-                    <div className="mt-5 h-px rounded-[100vw] bg-gray-200"></div>
-                </motion.div>
-            )}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{
+                            opacity: 0,
+                            height: 0,
+                        }}
+                        animate={{
+                            opacity: 1,
+                            height: "auto",
+                        }}
+                        exit={{
+                            opacity: 0,
+                            height: 0,
+                        }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <p className="mt-6 text-left font-light md:text-lg">
+                            {answer}
+                        </p>
+                        <div className="mt-5 h-px rounded-[100vw] bg-gray-200"></div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
             {!isOpen && (
                 <div className="mt-5 h-px rounded-[100vw] bg-gray-200"></div>
             )}
