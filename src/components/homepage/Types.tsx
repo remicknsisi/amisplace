@@ -5,17 +5,17 @@ import { poppins } from "../../helpers/loadFont";
 const Types = () => {
     return (
         <div className="px-5 md:px-10">
-            <div className="max-w-[80rem] w-full mx-auto py-14">
+            <div className="mx-auto w-full max-w-[80rem] py-14">
                 <div className="flex flex-col text-center">
-                    <div className="mx-auto mb-12 items-center justify-center max-w-[47rem]">
+                    <div className="mx-auto mb-12 max-w-[47rem] items-center justify-center">
                         <h2 className={`text-[2.5rem] ${poppins.className}`}>
                             You can become
                         </h2>
                     </div>
-                    <div className="grid gri-col-1fr md:max-w-[70rem] md:grid-cols-[1fr,1fr,1fr] auto-cols-[1fr] justify-center items-center mx-auto gap-10">
+                    <div className="gri-col-1fr mx-auto grid auto-cols-[1fr] items-center justify-center gap-10 md:max-w-[70rem] md:grid-cols-[1fr,1fr,1fr]">
                         <div>
                             <h3
-                                className={`text-[2rem] mb-8 ${poppins.className} text-green`}
+                                className={`mb-8 text-[2rem] ${poppins.className} text-green`}
                             >
                                 A host
                             </h3>
@@ -26,7 +26,7 @@ const Types = () => {
                         </div>
                         <div>
                             <h3
-                                className={`text-[2rem] mb-8 ${poppins.className} text-green`}
+                                className={`mb-8 text-[2rem] ${poppins.className} text-green`}
                             >
                                 A guest
                             </h3>
@@ -37,7 +37,7 @@ const Types = () => {
                         </div>
                         <div>
                             <h3
-                                className={`text-[2rem] mb-8 ${poppins.className} text-green`}
+                                className={`mb-8 text-[2rem] ${poppins.className} text-green`}
                             >
                                 A connection
                             </h3>

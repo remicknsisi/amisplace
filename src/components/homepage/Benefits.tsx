@@ -8,11 +8,11 @@ import { poppins } from "../../helpers/loadFont";
 const Benefits = () => {
     return (
         <div className="px-5 md:px-10">
-            <div className="max-w-[80rem] w-full mx-auto py-14">
+            <div className="mx-auto w-full max-w-[80rem] py-14">
                 <div className="flex flex-col text-center">
-                    <div className="mx-auto my-12 items-center justify-center max-w-[47rem]">
+                    <div className="mx-auto my-12 max-w-[47rem] items-center justify-center">
                         <h2
-                            className={`text-[2.5rem] mb-8 ${poppins.className}`}
+                            className={`mb-8 text-[2.5rem] ${poppins.className}`}
                         >
                             Where every guest becomes family
                         </h2>
@@ -22,7 +22,7 @@ const Benefits = () => {
                             with ease with people you trust.
                         </p>
                     </div>
-                    <div className="grid grid-col-1fr lg:grid-cols-[1fr,1fr,1fr] auto-cols-[1fr] justify-center items-center mx-auto gap-10">
+                    <div className="grid-col-1fr mx-auto grid auto-cols-[1fr] items-center justify-center gap-10 lg:grid-cols-[1fr,1fr,1fr]">
                         <motion.div
                             className="h-full"
                             initial={{ opacity: 0, y: 10 }}

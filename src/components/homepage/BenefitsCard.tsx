@@ -17,11 +17,11 @@ const BenefitsCard = ({
 }: BenefitsCardProps) => {
     return (
         <div
-            className="bg-lightGreen-50 rounded-2xl py-[2em] px-[2.5rem] h-full max-w-[35rem]
-                            md:grid md:grid-cols-[.75fr,1.25fr] md:grid-rows-[auto] md:items-center md:max-w-[40rem]
-                            lg:block lg:py-14 lg:px-[1.5rem] lg:w-full lg:min-h-[27rem]"
+            className="h-full max-w-[35rem] rounded-2xl bg-lightGreen-50 px-[2.5rem] py-[2em]
+                            md:grid md:max-w-[40rem] md:grid-cols-[.75fr,1.25fr] md:grid-rows-[auto] md:items-center
+                            lg:block lg:min-h-[27rem] lg:w-full lg:px-[1.5rem] lg:py-14"
         >
-            <div className="mb-10 md:mb-0 lg:mb-10 flex justify-center">
+            <div className="mb-10 flex justify-center md:mb-0 lg:mb-10">
                 <img
                     src={imgPath}
                     alt={imgAlt}
@@ -33,7 +33,7 @@ const BenefitsCard = ({
                 <h3 className={`mb-4 text-[1.25rem] ${poppins.className}`}>
                     {cardTitle}
                 </h3>
-                <p className="text-[1.125rem] lg:text-xl font-light">
+                <p className="text-[1.125rem] font-light lg:text-xl">
                     {cardSubtitle}
                 </p>
             </div>

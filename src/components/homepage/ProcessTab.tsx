@@ -11,13 +11,13 @@ interface ProcessTabProps {
 
 const ProcessTab = ({ activeTab, setActiveTab }: ProcessTabProps) => {
     return (
-        <div className="flex justify-start flex-col pt-4 w-full h-full max-w-[29rem]">
+        <div className="flex h-full w-full max-w-[29rem] flex-col justify-start pt-4">
             <div className="w-full">
                 <div className="flex justify-center">
                     <button
-                        className={`w-full h-12 flex justify-center pt-4 pb-12 px-2 ${
+                        className={`flex h-12 w-full justify-center px-2 pb-12 pt-4 ${
                             activeTab === "Guest"
-                                ? "border-b-2 text-green border-green"
+                                ? "border-b-2 border-green text-green"
                                 : "border-b-2"
                         }`}
                         onClick={() => setActiveTab("Guest")}
@@ -25,15 +25,15 @@ const ProcessTab = ({ activeTab, setActiveTab }: ProcessTabProps) => {
                         <span
                             className={`${
                                 activeTab === "Host" && `opacity-10`
-                            } font-bold text-xl`}
+                            } text-xl font-bold`}
                         >
                             Guest
                         </span>
                     </button>
                     <button
-                        className={`w-full h-12 flex justify-center pt-4 pb-12 px-2 ${
+                        className={`flex h-12 w-full justify-center px-2 pb-12 pt-4 ${
                             activeTab === "Host"
-                                ? "border-b-2 text-green border-green"
+                                ? "border-b-2 border-green text-green"
                                 : "border-b-2"
                         }`}
                         onClick={() => setActiveTab("Host")}
@@ -41,7 +41,7 @@ const ProcessTab = ({ activeTab, setActiveTab }: ProcessTabProps) => {
                         <span
                             className={`${
                                 activeTab === "Guest" && `opacity-10`
-                            } font-bold text-xl`}
+                            } text-xl font-bold`}
                         >
                             Host
                         </span>

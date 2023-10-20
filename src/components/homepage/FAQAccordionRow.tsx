@@ -18,17 +18,17 @@ const FAQAccordionRow = ({
     onToggle,
 }: FAQAccordionRowProps) => {
     return (
-        <div className="flex flex-col items-stretch justify-items-center max-w-[45rem] md:w-[54rem] lg:max-w-[54rem]">
+        <div className="flex max-w-[45rem] flex-col items-stretch justify-items-center md:w-[54rem] lg:max-w-[54rem]">
             <button
-                className="flex items-center md:items-start justify-between pt-6"
+                className="flex items-center justify-between pt-6 md:items-start"
                 onClick={onToggle}
             >
                 <h3
-                    className={`leading-[1.5] md:leading-[1.1] text-[1.2rem] md:text-[1.4rem] tracking-[0.00625em] md:font-semibold text-left md:text-center ${poppins.className}`}
+                    className={`text-left text-[1.2rem] leading-[1.5] tracking-[0.00625em] md:text-center md:text-[1.4rem] md:font-semibold md:leading-[1.1] ${poppins.className}`}
                 >
                     {question}
                 </h3>
-                <div className="flex-none ml-4">
+                <div className="ml-4 flex-none">
                     {isOpen ? (
                         <img src="/assets/logos/minus.svg" alt="Minus icon" />
                     ) : (
@@ -45,14 +45,14 @@ const FAQAccordionRow = ({
                         duration: 0.25,
                     }}
                 >
-                    <p className="text-left mt-6 font-light md:text-lg">
+                    <p className="mt-6 text-left font-light md:text-lg">
                         {answer}
                     </p>
-                    <div className="h-px rounded-[100vw] mt-5 bg-gray-200"></div>
+                    <div className="mt-5 h-px rounded-[100vw] bg-gray-200"></div>
                 </motion.div>
             )}
             {!isOpen && (
-                <div className="h-px rounded-[100vw] mt-5 bg-gray-200"></div>
+                <div className="mt-5 h-px rounded-[100vw] bg-gray-200"></div>
             )}
         </div>
     );

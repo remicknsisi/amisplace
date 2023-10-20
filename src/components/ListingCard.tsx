@@ -20,28 +20,32 @@ const ListingCard = ({
     duration,
 }: ListingCardProps) => {
     return (
-        <div className="flex h-full rounded-2xl flex-col justify-between overflow-hidden shadow-[0_4px_18px_rgba(47,48,48,0.1)]">
+        <div className="flex h-full flex-col justify-between overflow-hidden rounded-2xl shadow-[0_4px_18px_rgba(47,48,48,0.1)]">
             <div className="listing-container">
-                <img src={imgPath} alt={imgAlt} className="w-full h-[250px] object-cover" />
-                <div className="image-caption bg-white rounded-tr-2xl font-bold pt-[0.375rem] px-6 sm:text-xl md:text-lg lg:text-xl">
+                <img
+                    src={imgPath}
+                    alt={imgAlt}
+                    className="h-[250px] w-full object-cover"
+                />
+                <div className="image-caption rounded-tr-2xl bg-white px-6 pt-[0.375rem] font-bold sm:text-xl md:text-lg lg:text-xl">
                     {location}
                 </div>
             </div>
             <div className="px-6 pt-6">
-                <h3 className="font-light mb-6 text-sm opacity-80 min-h-[3rem]">
+                <h3 className="mb-6 min-h-[3rem] text-sm font-light opacity-80">
                     {description}
                 </h3>
-                <p className="flex items-center mb-6 text-sm font-light">
+                <p className="mb-6 flex items-center text-sm font-light">
                     <span className="location-icon" />
                     Area: {area}
                 </p>
             </div>
-            <div className="flex justify-between border-t pt-3 pb-4 px-6">
+            <div className="flex justify-between border-t px-6 pb-4 pt-3">
                 <h4 className="flex items-end">
-                    <span className="font-bold text-2xl mr-[.2rem]">
+                    <span className="mr-[.2rem] text-2xl font-bold">
                         ${price}
                     </span>
-                    <span className="text-sm font-bold mb-1">/{duration}</span>
+                    <span className="mb-1 text-sm font-bold">/{duration}</span>
                 </h4>
             </div>
         </div>

@@ -9,17 +9,17 @@ import { poppins } from "../../helpers/loadFont";
 const Process = () => {
     const [activeTab, setActiveTab] = useState("Guest");
     return (
-        <div className="px-5 md:px-10 bg-offWhite">
-            <div className="max-w-[80rem] w-full mx-auto py-14">
+        <div className="bg-offWhite px-5 md:px-10">
+            <div className="mx-auto w-full max-w-[80rem] py-14">
                 <div className="flex flex-col text-center">
-                    <div className="mx-auto items-center justify-center max-w-[47rem]">
+                    <div className="mx-auto max-w-[47rem] items-center justify-center">
                         <h2
-                            className={`text-[2.5rem] mb-8 ${poppins.className}`}
+                            className={`mb-8 text-[2.5rem] ${poppins.className}`}
                         >
                             How it works
                         </h2>
                     </div>
-                    <div className="grid gri-col-1fr md:grid-cols-[1fr,1fr] auto-cols-[1fr] w-full items-center mx-auto gap-10">
+                    <div className="gri-col-1fr mx-auto grid w-full auto-cols-[1fr] items-center gap-10 md:grid-cols-[1fr,1fr]">
                         {activeTab === "Guest" && (
                             <motion.div
                                 initial={{ opacity: 0, y: 10 }}
