@@ -8,7 +8,7 @@ const ListingsBody = () => {
     const { listings } = MOCK_LISTINGS;
     return (
         <div className="px-10">
-            <div className="w-full max-w-[80rem] pt-8">
+            <div className="w-full max-w-[80rem] pt-8 mx-auto">
                 <div className="flex flex-col mx-auto max-w-[70rem]">
                     <div className="mb-12">
                         <div className="flex justify-between items-end mx-auto">
