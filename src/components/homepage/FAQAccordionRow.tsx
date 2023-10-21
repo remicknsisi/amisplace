@@ -1,10 +1,11 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
 import { poppins } from "../../helpers/loadFont";
 
 interface FAQAccordionRowProps {
     question: string;
-    answer: string;
+    answer?: string;
+    answerRender?: () => ReactElement;
     isOpen: boolean;
     onToggle: () => void;
 }
@@ -12,6 +13,7 @@ interface FAQAccordionRowProps {
 const FAQAccordionRow = ({
     question,
     answer,
+    answerRender,
     isOpen,
     onToggle,
 }: FAQAccordionRowProps) => {
@@ -52,7 +54,7 @@ const FAQAccordionRow = ({
                     <div
                         className={`mt-6 overflow-hidden text-left font-light md:text-lg`}
                     >
-                        {answer}
+                        {answerRender ? answerRender() : answer}
                     </div>
                 </div>
             </div>

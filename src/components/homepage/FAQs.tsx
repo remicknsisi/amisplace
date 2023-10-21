@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 
 import FAQAccordionRow from "./FAQAccordionRow";
 
 import data from "../../../public/text/FAQs.json";
-
-import { poppins } from "../../helpers/loadFont";
 
 const FAQs = () => {
     const { faqs } = data;
@@ -33,57 +30,25 @@ const FAQs = () => {
                         onToggle={() => toggleRow(index)}
                     />
                 ))}
-                <div className="flex max-w-[45rem] flex-col items-stretch justify-items-center md:w-[54rem] lg:max-w-[54rem]">
-                    <button
-                        className="flex items-center justify-between pt-6 md:items-start"
-                        onClick={() => toggleRow(5)}
-                    >
-                        <h3
-                            className={`text-left text-[1.2rem] leading-[1.5] tracking-[0.00625em] md:text-center md:text-[1.4rem] md:font-semibold md:leading-[1.1] ${poppins.className}`}
-                        >
-                            I love Amisplace! Can I help out?
-                        </h3>
-                        <div className="ml-4 flex-none">
-                            {expandedRows.includes(5) ? (
-                                <img
-                                    src="/assets/logos/minus.svg"
-                                    alt="Minus icon"
-                                />
-                            ) : (
-                                <img
-                                    src="/assets/logos/plus.svg"
-                                    alt="Plus icon"
-                                />
-                            )}
-                        </div>
-                    </button>
-                    {expandedRows.includes(5) && (
-                        <motion.div
-                            initial={{ opacity: 0, y: -10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{
-                                ease: "easeIn",
-                                duration: 0.25,
-                            }}
-                        >
-                            <p className="mt-6 text-left font-light">
-                                Yes, please send a message to{" "}
-                                <a
-                                    className="text-green"
-                                    href="mailto:amy@amisplace.com?subject=General Queries"
-                                >
-                                    amy@amisplace.com
-                                </a>
-                                . We&apos;d love to talk to you and figure out
-                                how you can help.
-                            </p>
-                            <div className="mt-5 h-px rounded-[100vw] bg-gray-200"></div>
-                        </motion.div>
+                <FAQAccordionRow
+                    key={5}
+                    question={"I love Amisplace! Can I help out?"}
+                    answerRender={() => (
+                        <p className="mt-6 text-left font-light">
+                            Yes, please send a message to{" "}
+                            <a
+                                className="text-green"
+                                href="mailto:amy@amisplace.com?subject=General Queries"
+                            >
+                                amy@amisplace.com
+                            </a>
+                            . We&apos;d love to talk to you and figure out how
+                            you can help.
+                        </p>
                     )}
-                    {!expandedRows.includes(5) && (
-                        <div className="mt-5 h-px rounded-[100vw] bg-gray-200"></div>
-                    )}
-                </div>
+                    isOpen={expandedRows.includes(5)}
+                    onToggle={() => toggleRow(5)}
+                />
             </div>
         </div>
     );
