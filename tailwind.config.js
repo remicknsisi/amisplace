@@ -12,6 +12,9 @@ module.exports = {
             "lightGreen-50": "#F0F6F3",
             "offWhite": "#FAFAFA",
         },
+        transitionProperty: {
+          'max-height': 'max-height'
+        }
     },
   },
   
