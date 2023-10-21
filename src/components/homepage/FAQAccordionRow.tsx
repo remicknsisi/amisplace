@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useState } from "react";
 
 import { poppins } from "../../helpers/loadFont";
 
@@ -6,17 +6,17 @@ interface FAQAccordionRowProps {
     question: string;
     answer?: string;
     answerRender?: () => ReactElement;
-    isOpen: boolean;
-    onToggle: () => void;
 }
 
 const FAQAccordionRow = ({
     question,
     answer,
     answerRender,
-    isOpen,
-    onToggle,
 }: FAQAccordionRowProps) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const onToggle = () => {
+        setIsOpen(!isOpen);
+    };
     return (
         <div className="flex max-w-[45rem] flex-col items-stretch justify-items-center md:w-[54rem] lg:max-w-[54rem]">
             <button
