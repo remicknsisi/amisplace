@@ -10,7 +10,7 @@
         "price": "80",
         "duration": "night",
         "details_link": "https://photos.app.goo.gl/B7CbYMdqo14qxXsm8",
-        "isAvailable": true
+        "isAvailable": false
       },
       {
         "location": "Washington D.C.",
