@@ -41,7 +41,7 @@ const ListingCard = ({
                 <img
                     src={imgPath || "/assets/listing-generic-photo.jpeg"}
                     alt={imgAlt}
-                    className="h-[13rem] w-full object-cover"
+                    className="h-[60vw] max-h-[21rem] w-full object-cover md:h-[28vw] md:max-h-none lg:h-[13rem]"
                 />
                 <div className="absolute bottom-0 rounded-tr-2xl bg-white px-6 pt-[0.375rem] font-bold sm:text-xl md:text-lg lg:text-xl">
                     {location}

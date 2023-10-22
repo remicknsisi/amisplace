@@ -134,7 +134,7 @@ const ListingsBody = () => {
                         </div>
                         <hr className="mt-2" />
                     </div>
-                    <div className="grid grid-cols-[1fr,1fr,1fr] items-stretch justify-center gap-x-10 gap-y-16">
+                    <div className="mx-auto grid max-w-[34rem] grid-cols-[1fr] items-stretch justify-center gap-x-10 gap-y-16 md:max-w-none md:grid-cols-[1fr,1fr] lg:grid-cols-[1fr,1fr,1fr]">
                         {filteredListings.map((listing, index) => (
                             <motion.div
                                 className="h-full"
@@ -142,13 +142,12 @@ const ListingsBody = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{
                                     ease: "easeInOut",
-                                    duration: .75,
-                                    delay: (0.25 * (index % 3)),
+                                    duration: 0.75,
+                                    delay: 0.25 * (index % 3),
                                 }}
                                 key={`${listing.location}-${listing.host}-${index}`}
                             >
                                 <ListingCard
-
                                     location={listing.location}
                                     description={listing.description}
                                     area={listing.area}
