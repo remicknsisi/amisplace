@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 import ListingCard from "../ListingCard";
 
@@ -135,20 +136,32 @@ const ListingsBody = () => {
                     </div>
                     <div className="grid grid-cols-[1fr,1fr,1fr] items-stretch justify-center gap-x-10 gap-y-16">
                         {filteredListings.map((listing, index) => (
-                            <ListingCard
+                            <motion.div
+                                className="h-full"
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{
+                                    ease: "easeInOut",
+                                    duration: .75,
+                                    delay: (0.25 * (index % 3)),
+                                }}
                                 key={`${listing.location}-${listing.host}-${index}`}
-                                location={listing.location}
-                                description={listing.description}
-                                area={listing.area}
-                                imgPath={listing.imgSrc}
-                                imgAlt={`Picture of ${listing.description}`}
-                                price={listing.price}
-                                duration={listing.duration}
-                                host={listing.host}
-                                available_dates={listing.available_dates}
-                                link={listing.details_link}
-                                isListingsPageComponent
-                            />
+                            >
+                                <ListingCard
+
+                                    location={listing.location}
+                                    description={listing.description}
+                                    area={listing.area}
+                                    imgPath={listing.imgSrc}
+                                    imgAlt={`Picture of ${listing.description}`}
+                                    price={listing.price}
+                                    duration={listing.duration}
+                                    host={listing.host}
+                                    available_dates={listing.available_dates}
+                                    link={listing.details_link}
+                                    isListingsPageComponent
+                                />
+                            </motion.div>
                         ))}
                     </div>
                 </div>
