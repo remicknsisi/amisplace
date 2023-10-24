@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import { motion } from "framer-motion";
 import { poppins } from "../../helpers/loadFont";
 
 import HamburgerIcon from "../../../public/assets/logos/hamburger_icon";
@@ -10,7 +9,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="px-5 md:px-10 fixed w-full bg-[white] z-[1000] top-0">
+            <div className="fixed top-0 z-[1000] w-full bg-[white] px-5 md:px-10">
                 <div className="mx-auto w-full max-w-7xl">
                     <div className="flex h-16 justify-between">
                         <a
@@ -57,34 +56,26 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            {isMenuOpen && (
-                <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                        ease: "easeInOut",
-                        duration: 0.35,
-                    }}
-                    className="absolute w-full"
-                >
-                    <div className="mx-auto w-full max-w-7xl md:hidden">
-                        <div className="bg-white shadow-md">
-                            <a
-                                href="/join"
-                                className="block py-6 text-center text-[.9375rem] font-semibold tracking-wide text-[#222222] transition duration-200 ease-in-out hover:text-green"
-                            >
-                                Join now
-                            </a>
-                            <a
-                                href="/about"
-                                className="block py-6 text-center text-[.9375rem] font-semibold tracking-wide text-[#222222] transition duration-200 ease-in-out hover:text-green"
-                            >
-                                About us
-                            </a>
-                        </div>
-                    </div>
-                </motion.div>
-            )}
+            <div
+                className={`fixed z-10 mx-auto w-full transform duration-500 ease-in-out md:hidden ${
+                    isMenuOpen ? "translate-y-0" : "-translate-y-full"
+                }`}
+            >
+                <div className="bg-white">
+                    <a
+                        href="/join"
+                        className="block py-6 text-center text-[.9375rem] font-semibold tracking-wide text-[#222222] transition duration-200 ease-in-out hover:text-green"
+                    >
+                        Join now
+                    </a>
+                    <a
+                        href="/about"
+                        className="block py-6 text-center text-[.9375rem] font-semibold tracking-wide text-[#222222] transition duration-200 ease-in-out hover:text-green"
+                    >
+                        About us
+                    </a>
+                </div>
+            </div>
         </>
     );
 };
