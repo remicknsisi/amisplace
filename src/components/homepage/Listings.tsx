@@ -1,7 +1,9 @@
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 
-import ListingCard from "../ListingCard";
+import ListingCard from "../listings/ListingCard";
 
 import { poppins } from "../../helpers/loadFont";
 

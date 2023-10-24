@@ -1,7 +1,9 @@
+"use client";
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-import ListingCard from "../ListingCard";
+import ListingCard from "./ListingCard";
 
 import MOCK_LISTINGS from "../../../public/test_data/listings.json";
 
