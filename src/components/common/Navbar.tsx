@@ -12,7 +12,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="px-5 md:px-10 fixed w-full bg-[white] z-[1000] top-0">
+            <div className="fixed top-0 z-[1000] w-full bg-[white] px-5 md:px-10">
                 <div className="mx-auto w-full max-w-7xl">
                     <div className="flex h-16 justify-between">
                         <a

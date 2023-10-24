@@ -15,12 +15,14 @@ export const metadata: Metadata = {
     title: "Amisplace - Travel community",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode}) {
+export default function RootLayout({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
     return (
         <html lang="en">
-            <body className={nunito.className}>
-                {children}
-            </body>
+            <body className={nunito.className}>{children}</body>
         </html>
     );
 }

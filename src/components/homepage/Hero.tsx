@@ -41,7 +41,7 @@ const Hero = () => {
     }, [images.length]);
 
     return (
-        <div className="bg-lightGreen-50 px-5 md:px-10 mt-16">
+        <div className="mt-16 bg-lightGreen-50 px-5 md:px-10">
             <div className="ml-auto mr-auto grid max-w-[80rem] auto-cols-[1fr] grid-cols-[1fr] pt-[4rem] md:grid-cols-[1fr,1fr] md:pt-0 lg:gap-6">
                 <div className="flex flex-col items-center justify-center md:items-start">
                     <motion.div
@@ -109,7 +109,7 @@ const Hero = () => {
                         ))}
                     </motion.div>
                     <motion.div
-                        className="relative overflow-hidden ml-0 h-[22rem] rounded-tl-[30vw] md:ml-[20px] md:h-[29rem] md:rounded-tl-[16rem] lg:h-[32.375rem]"
+                        className="relative ml-0 h-[22rem] overflow-hidden rounded-tl-[30vw] md:ml-[20px] md:h-[29rem] md:rounded-tl-[16rem] lg:h-[32.375rem]"
                         initial="hidden"
                         animate="visible"
                         exit="hidden"
