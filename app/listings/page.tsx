@@ -18,7 +18,7 @@ const Listings = async () => {
         data: { session },
     } = await supabase.auth.getSession();
 
-    if (session) {
+    if (!session) {
         redirect("/login");
     }
     // This is where we can fetch our listings!
