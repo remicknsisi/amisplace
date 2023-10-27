@@ -18,6 +18,14 @@ https://github.com/amisplace/amisplace-public.git
 
 and make sure to `yarn install` to install all dependencies. Then, you should be able to run `yarn dev` and see the local instance on `localhost:3000`! 🚀
 
+### Environment variables
+
+```
+cp .env.local.example .env.local
+```
+
+Set the values based on Supabase console.
+
 ## Creating a pull request
 
 When developing, please open a pull request so that others on the team can review your PR and leave feedback as needed.
@@ -53,4 +61,9 @@ Prior to submitting/merging a pull request, please run the following commands to
 ```
 yarn prettier
 yarn lint
+```
+
+## Re-generate database types:
+```
+supabase gen types typescript --project-id zlwpchokhikxvedivmtj  --schema public > lib/database.ts
 ```

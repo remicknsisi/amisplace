@@ -18,3 +18,7 @@ dist-types
 
 # dependencies
 node_modules
+
+# Environment variables
+.env.local
+

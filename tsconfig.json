@@ -15,6 +15,9 @@
         "jsx": "preserve",
         "types": ["node"],
         "incremental": true,
+        "paths": {
+            "@/lib/*": ["./lib/*"]
+        },
         "plugins": [
             {
                 "name": "next"

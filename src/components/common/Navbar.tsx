@@ -5,12 +5,14 @@ import React, { useEffect, useState } from "react";
 import { poppins } from "../../helpers/loadFont";
 
 import HamburgerIcon from "../../../public/assets/logos/hamburger_icon";
+import type { Session } from "@supabase/auth-helpers-nextjs";
 
 interface NavbarProps {
     requiresPadding?: boolean;
+    session: Session | null;
 }
 
-const Navbar = ({ requiresPadding = true }: NavbarProps) => {
+const Navbar = ({ requiresPadding = true, session }: NavbarProps) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentPath, setCurrentPath] = useState("");
 
@@ -56,6 +58,20 @@ const Navbar = ({ requiresPadding = true }: NavbarProps) => {
                             >
                                 About us
                             </a>
+                            {session ? (
+                                <form action="/auth/logout" method="post">
+                                    <button className="color-[#222222] flex items-center justify-center px-4 py-6 text-[.9375rem] font-semibold tracking-wide transition duration-200 ease-in-out hover:text-green">
+                                        Logout
+                                    </button>
+                                </form>
+                            ) : (
+                                <a
+                                    href="/login"
+                                    className="color-[#222222] flex items-center justify-center px-4 py-6 text-[.9375rem] font-semibold tracking-wide transition duration-200 ease-in-out hover:text-green"
+                                >
+                                    Login
+                                </a>
+                            )}
                         </nav>
                         <div className="block w-20 pb-[22px] pl-[22px] pt-[20px] md:hidden">
                             <div className="ml-auto h-6 w-6">

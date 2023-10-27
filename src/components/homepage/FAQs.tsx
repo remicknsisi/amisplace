@@ -22,7 +22,6 @@ const FAQs = () => {
                     />
                 ))}
                 <FAQAccordionRow
-                    key={5}
                     question={"I love Amisplace! Can I help out?"}
                     answerRender={() => (
                         <p className="mt-6 text-left font-light">
