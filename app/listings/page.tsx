@@ -24,7 +24,7 @@ const Listings = async () => {
     // This is where we can fetch our listings!
     return (
         <>
-            <Navbar session={null} />
+            <Navbar session={session} />
             <ListingsHeader />
             <ListingsBody />
             <Footer />
