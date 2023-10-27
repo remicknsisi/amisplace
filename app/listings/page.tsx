@@ -7,12 +7,12 @@ import Navbar from "../../src/components/common/Navbar";
 
 const Listings = () => {
     return (
-        <div>
+        <>
             <Navbar />
             <ListingsHeader />
             <ListingsBody />
             <Footer />
-        </div>
+        </>
     );
 };
 

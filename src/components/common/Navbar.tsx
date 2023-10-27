@@ -1,13 +1,22 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { poppins } from "../../helpers/loadFont";
 
 import HamburgerIcon from "../../../public/assets/logos/hamburger_icon";
 
-const Navbar = () => {
+interface NavbarProps {
+    requiresPadding?: boolean;
+}
+
+const Navbar = ({ requiresPadding = true }: NavbarProps) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [currentPath, setCurrentPath] = useState("");
+
+    useEffect(() => {
+        setCurrentPath(window.location.pathname);
+    }, []);
 
     return (
         <>
@@ -29,13 +38,21 @@ const Navbar = () => {
                         >
                             <a
                                 href="/join"
-                                className="color-[#222222] flex items-center justify-center px-4 py-6 text-[.9375rem] font-semibold tracking-wide transition duration-200 ease-in-out hover:text-green"
+                                className={`${
+                                    currentPath === "/join"
+                                        ? "text-green"
+                                        : "text-[#222222]"
+                                } flex items-center justify-center px-4 py-6 text-[.9375rem] font-semibold tracking-wide transition duration-200 ease-in-out hover:text-green`}
                             >
                                 Join now
                             </a>
                             <a
                                 href="/about"
-                                className="color-[#222222] flex items-center justify-center px-4 py-6 text-[.9375rem] font-semibold tracking-wide transition duration-200 ease-in-out hover:text-green"
+                                className={`${
+                                    currentPath === "/about"
+                                        ? "text-green"
+                                        : "text-[#222222]"
+                                }  flex items-center justify-center px-4 py-6 text-[.9375rem] font-semibold tracking-wide transition duration-200 ease-in-out hover:text-green`}
                             >
                                 About us
                             </a>
@@ -63,7 +80,7 @@ const Navbar = () => {
                     isMenuOpen ? "translate-y-0" : "-translate-y-full"
                 }`}
             >
-                <div className="bg-white">
+                <div className={`bg-white ${requiresPadding && "mt-16"}`}>
                     <a
                         href="/join"
                         className="block py-6 text-center text-[.9375rem] font-semibold tracking-wide text-[#222222] transition duration-200 ease-in-out hover:text-green"

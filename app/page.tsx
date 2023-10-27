@@ -13,7 +13,7 @@ import Types from "../src/components/homepage/Types";
 export default function Homepage() {
     return (
         <>
-            <Navbar />
+            <Navbar requiresPadding={false} />
             <Hero />
             <Benefits />
             <Listings />
