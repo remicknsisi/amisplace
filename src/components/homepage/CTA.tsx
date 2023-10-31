@@ -1,5 +1,7 @@
 import React from "react";
 
+import TravelButton from "../common/TravelButton";
+
 const CTA = () => {
     return (
         <div className="text-center">
@@ -15,14 +17,7 @@ const CTA = () => {
                     </p>
                 </div>
             </div>
-            <div className="transition duration-200 ease-in-out hover:scale-105">
-                <a
-                    href="/join"
-                    className="rounded-lg bg-green px-11 py-3 font-bold text-white hover:bg-darkGreen md:tracking-wide"
-                >
-                    Travel with Amisplace
-                </a>
-            </div>
+            <TravelButton />
         </div>
     );
 };

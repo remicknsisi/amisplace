@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
+import TravelButton from "../common/TravelButton";
+
 import { poppins } from "../../helpers/loadFont";
 
 interface ImageProps {
@@ -63,14 +65,7 @@ const Hero = () => {
                                 <span> simple</span>
                             </h1>
                         </div>
-                        <div className="transition duration-200 ease-in-out hover:scale-105">
-                            <a
-                                href="/join"
-                                className="rounded-lg bg-green px-11 py-3 font-bold text-white hover:bg-darkGreen md:tracking-wide"
-                            >
-                                Travel with Amisplace
-                            </a>
-                        </div>
+                        <TravelButton />
                     </motion.div>
                 </div>
                 <div className="flex justify-center">
