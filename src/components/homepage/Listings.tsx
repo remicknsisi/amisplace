@@ -41,7 +41,7 @@ const Listings = () => {
                             location="Paris, France"
                             description="1BR/1BA chic and cozy apartment"
                             area="14th District (Pernety)"
-                            price="108"
+                            price={108}
                             duration="night"
                         />
                     </motion.div>
@@ -61,7 +61,7 @@ const Listings = () => {
                             location="Big Island, Hawaii"
                             description="2BR/2BA house close to white sand beaches"
                             area="Waikoloa Village"
-                            price="2800"
+                            price={2800}
                             duration="month"
                         />
                     </motion.div>
@@ -81,7 +81,7 @@ const Listings = () => {
                             location="San Francisco, CA"
                             description="Private studio next to cute shops and restaurants"
                             area="Hayes Valley"
-                            price="82"
+                            price={82}
                             duration="night"
                         />
                     </motion.div>
