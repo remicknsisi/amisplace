@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 import ListingCard from "./ListingCard";
-mport { Database } from "@/lib/database.types";
+import { Database } from "@/lib/database.types";
 
 type FilterType = "available" | "all";
 
