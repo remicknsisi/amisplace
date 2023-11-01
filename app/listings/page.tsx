@@ -7,6 +7,7 @@ import Navbar from "../../src/components/common/Navbar";
 import { cookies } from "next/headers";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { redirect } from "next/navigation";
+import type { Database } from "@/lib/database.types";
 
 const Listings = async () => {
     const cookieStore = cookies();
@@ -21,12 +22,19 @@ const Listings = async () => {
     if (!session) {
         redirect("/login");
     }
-    // This is where we can fetch our listings!
+
+    // Not sure how to get the types to work better
+    const { data, error } = await supabase.from("listings").select();
+    type Listings = Database["public"]["Tables"]["listings"]["Row"][];
+    const listings: Listings = data as Listings;
+    if (error) {
+        console.log(`error fetching listings: ${error.message}`);
+    }
     return (
         <>
             <Navbar session={session} />
             <ListingsHeader />
-            <ListingsBody />
+            <ListingsBody listings={listings} />
             <Footer />
         </>
     );

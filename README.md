@@ -66,5 +66,5 @@ yarn lint
 ## Re-generate database types:
 
 ```
-supabase gen types typescript --project-id zlwpchokhikxvedivmtj  --schema public > lib/database.ts
+supabase gen types typescript --project-id zlwpchokhikxvedivmtj  --schema public > lib/database.types.ts
 ```

@@ -6,7 +6,7 @@ interface ListingCardProps {
     location: string;
     description: string;
     area: string;
-    price: string;
+    price: number;
     duration: string;
     host?: string;
     available_dates?: string;

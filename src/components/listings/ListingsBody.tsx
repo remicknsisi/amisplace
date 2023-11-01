@@ -4,24 +4,26 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 import ListingCard from "./ListingCard";
-
-import MOCK_LISTINGS from "../../../public/test_data/listings.json";
+import { Database } from "@/lib/database.types";
 
 type FilterType = "available" | "all";
 
-const ListingsBody = () => {
+interface ListingsBodyProps {
+    listings: Database["public"]["Tables"]["listings"]["Row"][];
+}
+
+const ListingsBody = ({ listings }: ListingsBodyProps) => {
     const FILTER_MAP = {
         available: "Available",
         all: "All member homes",
     };
-    const { listings } = MOCK_LISTINGS;
 
     const [filter, setFilter] = useState<FilterType>("available");
     const [isActive, setIsActive] = useState(false);
 
     const filteredListings = listings.filter((listing) => {
         if (filter === "available") {
-            return listing.isAvailable;
+            return listing.available;
         }
         return true;
     });
@@ -150,16 +152,18 @@ const ListingsBody = () => {
                                 key={`${listing.location}-${listing.host}-${index}`}
                             >
                                 <ListingCard
-                                    location={listing.location}
-                                    description={listing.description}
-                                    area={listing.area}
-                                    imgPath={listing.imgSrc}
+                                    location={listing.location || ""}
+                                    description={listing.description || ""}
+                                    area={listing.area || ""}
+                                    imgPath={listing.thumbnail_image || ""}
                                     imgAlt={`Picture of ${listing.description}`}
-                                    price={listing.price}
-                                    duration={listing.duration}
-                                    host={listing.host}
-                                    available_dates={listing.available_dates}
-                                    link={listing.details_link}
+                                    price={listing.price || 0}
+                                    duration={listing.price_unit || ""}
+                                    host={listing.host || ""}
+                                    available_dates={
+                                        listing.available_dates_string || ""
+                                    }
+                                    link={listing.more_details_link || ""}
                                     isListingsPageComponent
                                 />
                             </motion.div>
