@@ -6,7 +6,11 @@ interface FooterProps {
 
 const Footer = ({ requiresPadding = true }: FooterProps) => {
     return (
-        <div className={`${requiresPadding && "pt-[7.25rem]"}`}>
+        <div
+            className={`${
+                requiresPadding ? "pt-[7.25rem]" : ""
+            } z-100 bg-white`}
+        >
             <footer className="border-t border-[#2f30301a]">
                 <div className="ml-auto mr-auto w-full max-w-[80rem] px-5 md:px-10">
                     <div className="flex items-center justify-center">
