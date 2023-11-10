@@ -16,7 +16,7 @@ const JoinBody = () => {
     const inputClasses =
         "mb-6 h-[38px] min-h-[3rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green";
     return (
-        <div className="flex justify-center mt-[4.5rem] md:mt-0">
+        <div className="mt-[4.5rem] flex justify-center md:mt-0">
             <div className="flex max-w-[41rem] justify-start">
                 <div className="px-5 md:px-8">
                     <div className="mx-auto w-full max-w-[80rem] pb-[4.5rem]">
@@ -112,7 +112,7 @@ const JoinBody = () => {
                                     Use at least 8 characters in your password
                                 </p>
                             </div>
-                            <div className="col-span-2 row-span-1">
+                            <div className="col-span-2 row-span-1 font-light">
                                 By joining you agree to Amisplace&apos;s{" "}
                                 <a
                                     href="https://amisplace.notion.site/Terms-of-Service-5fd47ee6d6a14396b70d7c9daa355bfd?pvs=4"
@@ -141,7 +141,7 @@ const JoinBody = () => {
                                     }
                                     className="mt-1 h-4 w-4 rounded border-gray-300 align-top text-green focus:ring-green"
                                 />
-                                <label htmlFor="terms" className="ml-2">
+                                <label htmlFor="terms" className="ml-2 font-light">
                                     I have read and agree to the Terms of
                                     Service and Privacy Policy.
                                 </label>
@@ -164,6 +164,15 @@ const JoinBody = () => {
                                     Submit
                                 </button>
                             </div>
+                            <p className="mt-4 font-light tracking-wide">
+                                Already a member?{" "}
+                                <a
+                                    className="text-green underline"
+                                    href="/login"
+                                >
+                                    Log in
+                                </a>
+                            </p>
                         </form>
                     </div>
                 </div>
