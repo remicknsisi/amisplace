@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 
+import { useRouter } from "next/navigation";
+
 import { poppins } from "../../helpers/loadFont";
 
 import HamburgerIcon from "../../../public/assets/logos/hamburger_icon";
@@ -13,6 +15,7 @@ interface NavbarProps {
 }
 
 const Navbar = ({ requiresPadding = true, session }: NavbarProps) => {
+    const router = useRouter();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentPath, setCurrentPath] = useState("");
 
@@ -36,28 +39,14 @@ const Navbar = ({ requiresPadding = true, session }: NavbarProps) => {
                         </a>
                         <nav
                             role="navigation"
-                            className={`float-right hidden justify-end md:flex ${poppins.className}`}
+                            className={`float-right hidden justify-end md:flex md:items-center ${poppins.className}`}
                         >
-                            <a
-                                href="/join"
-                                className={`${
-                                    currentPath === "/join"
-                                        ? "text-green"
-                                        : "text-[#222222]"
-                                } flex items-center justify-center px-4 py-6 text-[.9375rem] font-semibold tracking-wide transition duration-200 ease-in-out hover:text-green`}
+                            <button
+                                onClick={() => router.push("/join")}
+                                className="flex h-[40px] items-center justify-center rounded-xl bg-green px-8 py-2 mx-2 text-[.9375rem] font-semibold tracking-wide text-white transition duration-200 ease-in-out hover:scale-105"
                             >
-                                Join now
-                            </a>
-                            <a
-                                href="/about"
-                                className={`${
-                                    currentPath === "/about"
-                                        ? "text-green"
-                                        : "text-[#222222]"
-                                }  flex items-center justify-center px-4 py-6 text-[.9375rem] font-semibold tracking-wide transition duration-200 ease-in-out hover:text-green`}
-                            >
-                                About us
-                            </a>
+                                Apply now
+                            </button>
                             {session ? (
                                 <form action="/auth/logout" method="post">
                                     <button className="color-[#222222] flex items-center justify-center px-4 py-6 text-[.9375rem] font-semibold tracking-wide transition duration-200 ease-in-out hover:text-green">
@@ -72,6 +61,16 @@ const Navbar = ({ requiresPadding = true, session }: NavbarProps) => {
                                     Login
                                 </a>
                             )}
+                            <a
+                                href="/about"
+                                className={`${
+                                    currentPath === "/about"
+                                        ? "text-green"
+                                        : "text-[#222222]"
+                                }  flex items-center justify-center px-4 py-6 text-[.9375rem] font-semibold tracking-wide transition duration-200 ease-in-out hover:text-green`}
+                            >
+                                About us
+                            </a>
                         </nav>
                         <div className="block w-20 pb-[22px] pl-[22px] pt-[20px] md:hidden">
                             <div className="ml-auto h-6 w-6">
@@ -97,12 +96,28 @@ const Navbar = ({ requiresPadding = true, session }: NavbarProps) => {
                 }`}
             >
                 <div className={`bg-white ${requiresPadding && "mt-16"}`}>
-                    <a
-                        href="/join"
-                        className="block py-6 text-center text-[.9375rem] font-semibold tracking-wide text-[#222222] transition duration-200 ease-in-out hover:text-green"
-                    >
-                        Join now
-                    </a>
+                    <div className="flex w-full justify-center">
+                        <button
+                            onClick={() => router.push("/join")}
+                            className="mt-4 flex h-[40px] items-center justify-center rounded-xl bg-green px-8 py-6 text-[.9375rem] font-semibold tracking-wide text-white transition duration-200 ease-in-out hover:scale-105"
+                        >
+                            Apply now
+                        </button>
+                    </div>
+                    {session ? (
+                        <form action="/auth/logout" method="post">
+                            <button className="color-[#222222] flex items-center justify-center px-4 py-6 text-[.9375rem] font-semibold tracking-wide transition duration-200 ease-in-out hover:text-green">
+                                Logout
+                            </button>
+                        </form>
+                    ) : (
+                        <a
+                            href="/login"
+                            className="color-[#222222] flex items-center justify-center px-4 py-6 text-[.9375rem] font-semibold tracking-wide transition duration-200 ease-in-out hover:text-green"
+                        >
+                            Login
+                        </a>
+                    )}
                     <a
                         href="/about"
                         className="block py-6 text-center text-[.9375rem] font-semibold tracking-wide text-[#222222] transition duration-200 ease-in-out hover:text-green"

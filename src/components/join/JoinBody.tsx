@@ -1,20 +1,22 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 
 import { poppins } from "../../helpers/loadFont";
 
 const JoinBody = () => {
+    const [showPassword, setShowPassword] = useState(false);
+    const [hasAgreed, setHasAgreed] = useState(false);
+
+    const toggleShowPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        setShowPassword(!showPassword);
+    };
+
+    const inputClasses =
+        "mb-6 h-[38px] min-h-[3rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green";
     return (
-        <div className="grid gap-x-10 gap-y-[16px] md:grid-cols-[1fr,1fr]">
-            <div className="top-0 flex h-[80vw] min-h-[18rem] flex-col md:sticky md:h-[100vh]">
-                <div className="h-[4.5rem] flex-none" />
-                <div className="flex-1 overflow-hidden md:rounded-br-3xl md:rounded-tr-3xl">
-                    <img
-                        src="/assets/join-photo.jpeg"
-                        alt="Woman sitting in front of a house."
-                        className="h-full w-full object-cover object-bottom"
-                    />
-                </div>
-            </div>
+        <div className="flex justify-center mt-[4.5rem] md:mt-0">
             <div className="flex max-w-[41rem] justify-start">
                 <div className="px-5 md:px-8">
                     <div className="mx-auto w-full max-w-[80rem] pb-[4.5rem]">
@@ -22,44 +24,15 @@ const JoinBody = () => {
                             <h1
                                 className={`${poppins.className} text-[2rem] font-bold md:text-[2.5rem]`}
                             >
-                                Join Amisplace
+                                Apply to join
                             </h1>
                             <p className="mb-4 mt-4 text-xl font-light opacity-70 md:mb-12">
-                                Send us an application -- we&apos;d love to have
-                                you be a part of Amisplace!
+                                We&apos;d love to have you be a part of
+                                Amisplace -- but first, you&apos;ll need to
+                                create an account.
                             </p>
                         </div>
                         <form className="grid grid-cols-[1fr,1fr] grid-rows-[1fr] gap-x-6 gap-y-0">
-                            <div className="col-span-2 row-span-1 mb-8">
-                                <label
-                                    htmlFor="email"
-                                    className="mb-2 font-semibold opacity-60"
-                                >
-                                    Join as:
-                                </label>
-                                <div className="mt-3 flex">
-                                    <label
-                                        className="mr-12 flex flex-row items-center"
-                                        htmlFor="host-button"
-                                    >
-                                        <div className="mr-2 h-3.5 w-3.5 rounded-full border border-solid border-[#C5D1CF]" />
-                                        <input className="absolute -z-10 opacity-0" />
-                                        <span className="inline-block cursor-pointer">
-                                            Both host & guest
-                                        </span>
-                                    </label>
-                                    <label
-                                        className="flex flex-row items-center"
-                                        htmlFor="guest-button"
-                                    >
-                                        <div className="mr-2 h-3.5 w-3.5 rounded-full border border-solid border-[#C5D1CF]" />
-                                        <input className="absolute -z-10 opacity-0" />
-                                        <span className="inline-block cursor-pointer">
-                                            Guest
-                                        </span>
-                                    </label>
-                                </div>
-                            </div>
                             <div className="col-span-2 row-span-1 block md:col-span-1">
                                 <label
                                     htmlFor="FNAME"
@@ -68,7 +41,7 @@ const JoinBody = () => {
                                     First name
                                 </label>
                                 <input
-                                    className="mb-6 h-[38px] min-h-[3rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green"
+                                    className={inputClasses}
                                     placeholder="Enter first name"
                                     id="FNAME"
                                     maxLength={256}
@@ -83,14 +56,14 @@ const JoinBody = () => {
                                     Last name
                                 </label>
                                 <input
-                                    className="mb-6 h-[38px] min-h-[3rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green"
+                                    className={inputClasses}
                                     placeholder="Enter last name"
                                     id="LNAME"
                                     maxLength={256}
                                     required
                                 />
                             </div>
-                            <div className="col-span-2 row-span-1 block md:col-span-1">
+                            <div className="col-span-2 row-span-1 block">
                                 <label
                                     htmlFor="EMAIL"
                                     className="mb-4 block font-bold opacity-70"
@@ -98,67 +71,46 @@ const JoinBody = () => {
                                     Email
                                 </label>
                                 <input
-                                    className="mb-6 h-[38px] min-h-[3rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green"
+                                    className={inputClasses}
                                     placeholder="Enter email"
                                     id="EMAIL"
                                     maxLength={256}
                                     required
                                 />
                             </div>
-                            <div className="col-span-2 row-span-1 block md:col-span-1">
+                            <div className="relative col-span-2 row-span-1 block">
                                 <label
-                                    htmlFor="CITY"
+                                    htmlFor="PASSWORD"
                                     className="mb-4 block font-bold opacity-70"
                                 >
-                                    City you live in
+                                    Password
                                 </label>
                                 <input
-                                    className="mb-6 h-[38px] min-h-[3rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green"
-                                    placeholder="Enter city name"
-                                    id="CITY"
+                                    className={`${inputClasses} mb-0 pr-10`}
+                                    type={showPassword ? "text" : "password"}
+                                    placeholder="Enter password"
+                                    id="PASSWORD"
                                     maxLength={256}
                                     required
                                 />
-                            </div>
-                            <div className="col-span-2 row-span-1">
-                                <label
-                                    htmlFor="REFERRAL"
-                                    className="mb-4 block font-bold opacity-70"
-                                >
-                                    Who do you know from Amisplace?
-                                </label>
-                                <input
-                                    className="mb-6 h-[38px] min-h-[3rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green"
-                                    id="REFERRAL"
-                                    maxLength={256}
-                                    required
-                                />
-                            </div>
-                            <div className="col-span-2 row-span-1">
-                                <label
-                                    htmlFor="CONNECTION"
-                                    className="mb-4 block font-bold opacity-70"
-                                >
-                                    How did you hear about us? (optional)
-                                </label>
-                                <input
-                                    className="mb-6 h-[38px] min-h-[3rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green"
-                                    id="CONNECTION"
-                                    maxLength={256}
-                                />
-                            </div>
-                            <div className="col-span-2 row-span-1">
-                                <label
-                                    htmlFor="ANYTHINGELSE"
-                                    className="mb-4 block font-bold opacity-70"
-                                >
-                                    Anything else we should know? (optional)
-                                </label>
-                                <textarea
-                                    className="mb-6 min-h-[8rem] w-full resize-none overflow-auto rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green"
-                                    id="ANYTHINGELSE"
-                                    placeholder="Enter message"
-                                />
+                                <div className="absolute bottom-4 right-0 top-0 flex items-center pr-3">
+                                    <button onClick={toggleShowPassword}>
+                                        <img
+                                            src={`/assets/logos/${
+                                                showPassword
+                                                    ? "visibility_off"
+                                                    : "visibility_on"
+                                            }.svg`}
+                                            className="h-5 w-5 cursor-pointer text-gray-400"
+                                            alt={`Eye ${
+                                                showPassword ? "closed" : "open"
+                                            } icon`}
+                                        />
+                                    </button>
+                                </div>
+                                <p className="mb-8 mt-2 text-sm text-gray-500">
+                                    Use at least 8 characters in your password
+                                </p>
                             </div>
                             <div className="col-span-2 row-span-1">
                                 By joining you agree to Amisplace&apos;s{" "}
@@ -179,12 +131,38 @@ const JoinBody = () => {
                                 </a>
                                 .
                             </div>
-                            <div className="col-span-2 row-span-1 mt-4 flex flex-col transition duration-200 ease-in-out hover:scale-105">
+                            <div className="col-span-2 row-span-1 my-4">
                                 <input
-                                    type="submit"
-                                    value="Submit"
-                                    className="cursor-pointer rounded-md bg-green px-[2.625rem] py-3 text-center text-xl font-bold text-white"
+                                    id="terms"
+                                    type="checkbox"
+                                    checked={hasAgreed}
+                                    onChange={(e) =>
+                                        setHasAgreed(e.target.checked)
+                                    }
+                                    className="mt-1 h-4 w-4 rounded border-gray-300 align-top text-green focus:ring-green"
                                 />
+                                <label htmlFor="terms" className="ml-2">
+                                    I have read and agree to the Terms of
+                                    Service and Privacy Policy.
+                                </label>
+                            </div>
+                            <div
+                                className={`col-span-2 row-span-1 mt-4 flex flex-col ${
+                                    hasAgreed
+                                        ? "transition duration-200 ease-in-out hover:scale-105"
+                                        : ""
+                                }`}
+                            >
+                                <button
+                                    className={`cursor-pointer rounded-md ${
+                                        !hasAgreed
+                                            ? "bg-green/[.15]"
+                                            : "bg-green"
+                                    } px-[2.625rem] py-3 text-center text-xl font-bold text-white`}
+                                    disabled={!hasAgreed}
+                                >
+                                    Submit
+                                </button>
                             </div>
                         </form>
                     </div>

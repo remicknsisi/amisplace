@@ -29,6 +29,7 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
+    "@next/next/no-img-element": "off",
     "array-bracket-spacing": ["error", "never"],
     "eol-last": ["error", "always"],
     indent: ["error", 4],
