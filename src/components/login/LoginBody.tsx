@@ -1,8 +1,30 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+
+import { useRouter } from "next/navigation";
 
 import { poppins } from "../../helpers/loadFont";
+import { isValidEmail } from "../../helpers/validationFunctions";
+import { errorMessages } from "../../helpers/errorMessages";
 
 const LoginBody = () => {
+    const router = useRouter();
+    const [emailInput, setEmailInput] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
+
+    const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        if (emailInput === "") {
+            e.preventDefault();
+            setErrorMessage(errorMessages.fieldRequired("Email address"));
+        } else if (!isValidEmail(emailInput)) {
+            e.preventDefault();
+            setErrorMessage(errorMessages.validAddress("email address"));
+        } else {
+            router.push("/");
+        }
+    };
+
     const inputClasses =
         "mb-6 h-[38px] min-h-[3rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green";
     return (
@@ -17,7 +39,7 @@ const LoginBody = () => {
                                 Log in
                             </h1>
                         </div>
-                        <form className="grid grid-cols-[1fr,1fr] grid-rows-[1fr] gap-x-6 gap-y-0 mb-4 mt-12">
+                        <form className="mb-4 mt-12 grid grid-cols-[1fr,1fr] grid-rows-[1fr] gap-x-6 gap-y-0">
                             <div className="col-span-2 row-span-1 block">
                                 <label
                                     htmlFor="EMAIL"
@@ -26,13 +48,17 @@ const LoginBody = () => {
                                     Email
                                 </label>
                                 <input
-                                    className={inputClasses}
+                                    className={`${inputClasses}`}
                                     placeholder="Enter email"
                                     id="EMAIL"
                                     maxLength={256}
                                     required
+                                    onBlur={(e) => setEmailInput(e.target.value)}
                                 />
                             </div>
+                            <p className="-mt-4 mb-6 text-sm text-red-500">
+                                {errorMessage}
+                            </p>
                             <div className="relative col-span-2 row-span-1 block">
                                 <label
                                     htmlFor="PASSWORD"
@@ -47,18 +73,22 @@ const LoginBody = () => {
                                     maxLength={256}
                                     required
                                 />
-                                <a href="/join" className="underline mb-8 mt-2 text-sm text-green">
+                                <a
+                                    href="/reset-request"
+                                    className="mb-8 mt-2 text-sm text-green underline"
+                                >
                                     Forgot your password?
                                 </a>
                             </div>
                             <div className="col-span-2 row-span-1 mt-12 flex flex-col transition duration-200 ease-in-out hover:scale-105">
                                 <button
-                                    className="cursor-pointer rounded-md px-[2.625rem] py-3 text-center text-xl font-bold text-white bg-green"
+                                    className="cursor-pointer rounded-md bg-green px-[2.625rem] py-3 text-center text-xl font-bold text-white"
+                                    onClick={handleButtonClick}
                                 >
                                     Log in
                                 </button>
                             </div>
-                            <p className="mt-4 font-light tracking-wide whitespace-nowrap">
+                            <p className="mt-4 whitespace-nowrap font-light tracking-wide">
                                 Not a member yet?{" "}
                                 <a
                                     className="text-green underline"

@@ -86,7 +86,7 @@ const JoinBody = () => {
                                     Password
                                 </label>
                                 <input
-                                    className={`${inputClasses} mb-0 pr-10`}
+                                    className={`${inputClasses} !mb-4 pr-10`}
                                     type={showPassword ? "text" : "password"}
                                     placeholder="Enter password"
                                     id="PASSWORD"
@@ -108,8 +108,8 @@ const JoinBody = () => {
                                         />
                                     </button>
                                 </div>
-                                <p className="mb-8 mt-2 text-sm text-gray-500">
-                                    Use at least 8 characters in your password
+                                <p className="mb-8 text-sm text-gray-500">
+                                    Use at least 8 characters in your password.
                                 </p>
                             </div>
                             <div className="col-span-2 row-span-1 font-light">
