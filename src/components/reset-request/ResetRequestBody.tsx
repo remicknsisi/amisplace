@@ -12,12 +12,12 @@ const ResetRequestBody = () => {
     const [emailInput, setEmailInput] = useState("");
     const [buttonClicked, setButtonClicked] = useState(false);
 
-    const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleButtonClick = () => {
         setButtonClicked(true);
         if (!isValidEmail(emailInput)) {
-            e.preventDefault();
+            return;
         } else {
-            router.push("/");
+            router.push("/reset/received");
         }
     };
 
@@ -67,6 +67,7 @@ const ResetRequestBody = () => {
                                 <button
                                     className="cursor-pointer rounded-md bg-green px-[2.625rem] py-3 text-center text-xl font-bold text-white"
                                     onClick={handleButtonClick}
+                                    type="button"
                                 >
                                     Request reset
                                 </button>

@@ -74,7 +74,7 @@ const LoginBody = () => {
                                     required
                                 />
                                 <a
-                                    href="/reset-request"
+                                    href="/reset/request"
                                     className="mb-8 mt-2 text-sm text-green underline"
                                 >
                                     Forgot your password?
