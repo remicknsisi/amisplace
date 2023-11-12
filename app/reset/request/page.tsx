@@ -19,7 +19,7 @@ const Reset = async () => {
 
     return (
         <>
-            <Navbar session={session} />
+            <Navbar session={session} requiresPadding={false} />
             <ResetRequestBody />
             <Footer />
         </>

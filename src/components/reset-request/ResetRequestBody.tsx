@@ -37,7 +37,7 @@ const ResetRequestBody = () => {
                                 to reset your password.
                             </p>
                         </div>
-                        <form className="mb-4 mt-6 grid grid-cols-[1fr,1fr] grid-rows-[1fr] gap-x-6 gap-y-0">
+                        <form className="mb-4 mt-6 grid grid-rows-[1fr] gap-x-6 gap-y-0">
                             <div className="col-span-2 row-span-1 block">
                                 <label
                                     htmlFor="EMAIL"

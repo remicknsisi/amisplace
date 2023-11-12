@@ -22,7 +22,7 @@ const Page = async () => {
     }
     return (
         <>
-            <Navbar session={null} />
+            <Navbar session={null} requiresPadding={false} />
             <JoinBody />
             <Footer requiresPadding={false} />
         </>

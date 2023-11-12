@@ -19,7 +19,7 @@ const ResetNew = async () => {
 
     return (
         <>
-            <Navbar session={session} />
+            <Navbar session={session} requiresPadding={false} />
             <NewPasswordBody />
             <Footer />
         </>

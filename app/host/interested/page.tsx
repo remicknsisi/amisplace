@@ -5,9 +5,9 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 
 import Navbar from "../../../src/components/common/Navbar";
 import Footer from "../../../src/components/homepage/Footer";
-import NewPasswordResetBody from "../../../src/components/reset-request/NewPasswordResetBody";
+import InterestedBody from "../../../src/components/host/InterestedBody";
 
-const ResetSuccess = async () => {
+const HostingInterested = async () => {
     const cookieStore = cookies();
     const supabase = createServerComponentClient({
         cookies: () => cookieStore,
@@ -20,10 +20,10 @@ const ResetSuccess = async () => {
     return (
         <>
             <Navbar session={session} requiresPadding={false} />
-            <NewPasswordResetBody />
+            <InterestedBody />
             <Footer />
         </>
     );
 };
 
-export default ResetSuccess;
+export default HostingInterested;

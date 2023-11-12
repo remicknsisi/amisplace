@@ -93,7 +93,7 @@ const JoinBody = () => {
                                     maxLength={256}
                                     required
                                 />
-                                <div className="absolute bottom-4 right-0 top-0 flex items-center pr-3">
+                                <div className="absolute bottom-6 right-0 top-0 flex items-center pr-3">
                                     <button onClick={toggleShowPassword}>
                                         <img
                                             src={`/assets/logos/${
