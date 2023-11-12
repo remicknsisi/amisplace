@@ -141,7 +141,10 @@ const JoinBody = () => {
                                     }
                                     className="mt-1 h-4 w-4 rounded border-gray-300 align-top text-green focus:ring-green"
                                 />
-                                <label htmlFor="terms" className="ml-2 font-light">
+                                <label
+                                    htmlFor="terms"
+                                    className="ml-2 font-light"
+                                >
                                     I have read and agree to the Terms of
                                     Service and Privacy Policy.
                                 </label>

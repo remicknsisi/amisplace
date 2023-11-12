@@ -43,7 +43,7 @@ const Navbar = ({ requiresPadding = true, session }: NavbarProps) => {
                         >
                             <button
                                 onClick={() => router.push("/join")}
-                                className="flex h-[40px] items-center justify-center rounded-xl bg-green px-8 py-2 mx-2 text-[.9375rem] font-semibold tracking-wide text-white transition duration-200 ease-in-out hover:scale-105"
+                                className="mx-2 flex h-[40px] items-center justify-center rounded-xl bg-green px-8 py-2 text-[.9375rem] font-semibold tracking-wide text-white transition duration-200 ease-in-out hover:scale-105"
                             >
                                 Apply now
                             </button>

@@ -53,7 +53,9 @@ const LoginBody = () => {
                                     id="EMAIL"
                                     maxLength={256}
                                     required
-                                    onBlur={(e) => setEmailInput(e.target.value)}
+                                    onBlur={(e) =>
+                                        setEmailInput(e.target.value)
+                                    }
                                 />
                             </div>
                             <p className="-mt-4 mb-6 text-sm text-red-500">
