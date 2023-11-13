@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { poppins } from "../../helpers/loadFont";
 
 import HamburgerIcon from "../../../public/assets/logos/hamburger_icon";
-import type { Session } from "@supabase/auth-helpers-nextjs";
+import { Session } from "@supabase/supabase-js";
 
 interface NavbarProps {
     requiresPadding?: boolean;

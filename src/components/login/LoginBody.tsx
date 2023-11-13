@@ -21,6 +21,14 @@ const LoginBody = () => {
             e.preventDefault();
             setErrorMessage(errorMessages.validAddress("email address"));
         } else {
+            // TODO, I don't think this works. I think it just redirects to the same page with a GET request
+            // <form action="/auth/login" method="post" onSubmit={handleFormSubmit}>
+            // And chage the button to type="submit"
+            // Then you can still do something similar with
+            // const handleFormSubmit = (event) => {
+            //      const formData = new FormData(e.target);
+            //      if ... event.preventDefault();
+            // Letting it go through should send the post request
             router.push("/");
         }
     };

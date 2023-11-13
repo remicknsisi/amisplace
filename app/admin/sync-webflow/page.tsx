@@ -1,7 +1,7 @@
 import React from "react";
 
 import { cookies } from "next/headers";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { createClient } from "@/utils/supabase/server";
 import Navbar from "../../../src/components/common/Navbar";
 import WebflowSync from "../../../src/components/admin/WebflowSync";
 import Footer from "../../../src/components/homepage/Footer";
@@ -9,9 +9,7 @@ import { redirect } from "next/navigation";
 
 export default async function AdminPage() {
     const cookieStore = cookies();
-    const supabase = createServerComponentClient({
-        cookies: () => cookieStore,
-    });
+    const supabase = createClient(cookieStore);
 
     const {
         data: { session },

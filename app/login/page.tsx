@@ -6,13 +6,11 @@ import Navbar from "../../src/components/common/Navbar";
 
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { createClient } from "@/utils/supabase/server";
 
 export default async function Login() {
     const cookieStore = cookies();
-    const supabase = createServerComponentClient({
-        cookies: () => cookieStore,
-    });
+    const supabase = createClient(cookieStore);
 
     const {
         data: { session },

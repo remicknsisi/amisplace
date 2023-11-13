@@ -16,7 +16,8 @@
         "types": ["node"],
         "incremental": true,
         "paths": {
-            "@/lib/*": ["./lib/*"]
+            "@/lib/*": ["./lib/*"],
+            "@/utils/*": ["./utils/*"]
         },
         "plugins": [
             {

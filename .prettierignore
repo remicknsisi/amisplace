@@ -30,3 +30,4 @@ node_modules
 
 # Specific files
 !middleware.ts
+!utils/supabase/*

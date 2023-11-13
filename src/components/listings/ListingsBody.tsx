@@ -9,7 +9,7 @@ import { Database } from "@/lib/database.types";
 type FilterType = "available" | "all";
 
 interface ListingsBodyProps {
-    listings: Database["public"]["Tables"]["listings"]["Row"][];
+    listings: Database["public"]["Tables"]["listings"]["Row"][] | null;
 }
 
 const ListingsBody = ({ listings }: ListingsBodyProps) => {
@@ -21,12 +21,17 @@ const ListingsBody = ({ listings }: ListingsBodyProps) => {
     const [filter, setFilter] = useState<FilterType>("available");
     const [isActive, setIsActive] = useState(false);
 
-    const filteredListings = listings.filter((listing) => {
-        if (filter === "available") {
-            return listing.available;
-        }
-        return true;
-    });
+    // TODO: I was trying to use ternary operator here but there are some weird indentation errors
+    let filteredListings: Database["public"]["Tables"]["listings"]["Row"][] =
+        [];
+    if (listings) {
+        filteredListings = listings.filter((listing) => {
+            if (filter === "available") {
+                return listing.available;
+            }
+            return true;
+        });
+    }
 
     const handleOptionClick = (optionText: FilterType) => {
         setFilter(optionText);

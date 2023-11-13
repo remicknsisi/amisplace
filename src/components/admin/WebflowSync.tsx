@@ -2,12 +2,15 @@
 
 import React, { useState } from "react";
 
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { createBrowserClient } from "@supabase/ssr";
 
 const WebflowSync = () => {
     const [isSyncRunning, setIsSyncRunning] = useState(false);
     const [syncResultLogs, setSyncResultLogs] = useState<string[]>([]);
-    const supabase = createClientComponentClient();
+    const supabase = createBrowserClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    );
 
     async function syncWebflowToSupabase() {
         if (isSyncRunning) {

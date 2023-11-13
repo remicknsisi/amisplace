@@ -10,13 +10,11 @@ import Navbar from "../src/components/common/Navbar";
 import Process from "../src/components/homepage/Process";
 import Types from "../src/components/homepage/Types";
 import { cookies } from "next/headers";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { createClient } from "@/utils/supabase/server";
 
 export default async function Homepage() {
     const cookieStore = cookies();
-    const supabase = createServerComponentClient({
-        cookies: () => cookieStore,
-    });
+    const supabase = createClient(cookieStore);
 
     const {
         data: { session },

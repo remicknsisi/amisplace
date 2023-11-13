@@ -1,12 +1,12 @@
-import { createMiddlewareClient } from "@supabase/auth-helpers-nextjs";
-import { NextResponse } from "next/server";
+import { type NextRequest } from "next/server";
+import { createClient } from "@/utils/supabase/middleware";
 
-import type { NextRequest } from "next/server";
-import type { Database } from "@/lib/database.types";
+// From https://github.com/vercel/next.js/blob/canary/examples/with-supabase/middleware.ts
+export async function middleware(request: NextRequest) {
+    const { supabase, response } = createClient(request);
 
-export async function middleware(req: NextRequest) {
-    const res = NextResponse.next();
-    const supabase = createMiddlewareClient<Database>({ req, res });
+    // Refresh session if expired - required for Server Components
     await supabase.auth.getSession();
-    return res;
+
+    return response;
 }

@@ -4,14 +4,12 @@ import Footer from "../../src/components/homepage/Footer";
 import JoinBody from "../../src/components/join/JoinBody";
 import Navbar from "../../src/components/common/Navbar";
 import { cookies } from "next/headers";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 
 const Page = async () => {
     const cookieStore = cookies();
-    const supabase = createServerComponentClient({
-        cookies: () => cookieStore,
-    });
+    const supabase = createClient(cookieStore);
 
     const {
         data: { session },
