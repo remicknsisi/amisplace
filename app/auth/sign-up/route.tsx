@@ -3,10 +3,11 @@ import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
-    const requestUrl = new URL(request.url);
     const formData = await request.formData();
     const email = String(formData.get("email"));
     const password = String(formData.get("password"));
+    const firstName = String(formData.get("firstName"));
+    const lastName = String(formData.get("lastName"));
     const cookieStore = cookies();
     const supabase = createClient(cookieStore);
 
@@ -14,35 +15,24 @@ export async function POST(request: Request) {
         email,
         password,
         options: {
-            emailRedirectTo: `${requestUrl.origin}/auth/callback`,
+            data: {
+                first_name: firstName,
+                last_name: lastName,
+            },
         },
     });
 
     if (error) {
-        return NextResponse.redirect(
-            // The error in the URL should probably be an enum that we match back to a string
-            // We want to avoid people injecting whatever mesage they want
-            `${requestUrl.origin}/login?error=${error.message}`,
-            {
-                // a 301 status is required to redirect from a POST to a GET route
-                status: 301,
-            }
-        );
+        return NextResponse.json({ success: false });
     }
 
     // This is a hacky way to check if the user has already registered.
     // See details at https://github.com/supabase/supabase-js/issues/296
+    // Apparently we could use the prod API key to get a better error message instead
     if (data?.user?.identities?.length === 0) {
-        return NextResponse.redirect(
-            `${requestUrl.origin}/login?alreadyExists=true`,
-            {
-                // a 301 status is required to redirect from a POST to a GET route
-                status: 301,
-            }
-        );
+        // TODO: should probably be using some shared ENUM here
+        return NextResponse.json({ success: false, alreadyInUse: true });
     }
 
-    return NextResponse.redirect(requestUrl.origin, {
-        status: 301,
-    });
+    return NextResponse.json({ success: true });
 }

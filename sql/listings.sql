@@ -43,14 +43,6 @@ AS PERMISSIVE FOR ALL
 TO authenticated
 WITH CHECK (exists ( select 1 from profiles where auth.uid() = id and admin = true ))
 
--- Add function to update 'updated_at' field
-create
-or replace function update_updated_at () returns trigger as $$
-begin
-  new.updated_at = current_timestamp;
-  return new;
-end;
-$$ language plpgsql;
 
 -- Create trigger to call the function
 create trigger

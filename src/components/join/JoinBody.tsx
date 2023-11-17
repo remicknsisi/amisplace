@@ -1,17 +1,41 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { poppins } from "../../helpers/loadFont";
 
 const JoinBody = () => {
+    const router = useRouter();
     const [showPassword, setShowPassword] = useState(false);
     const [hasAgreed, setHasAgreed] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
 
     const toggleShowPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
         setShowPassword(!showPassword);
     };
+
+    async function onSubmit(event: FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+
+        const formData = new FormData(event.currentTarget);
+        const response = await fetch("/auth/sign-up", {
+            method: "POST",
+            body: formData,
+        });
+
+        const data = await response.json();
+        if (data?.success) {
+            // TODO: change to the next step page
+            router.push("/account");
+        } else if (data?.alreadyInUse) {
+            // TODO: we should redirect to an error specific page
+            setErrorMessage("Email already in use, try to log in instead?");
+        } else {
+            setErrorMessage("An error occured, please try again");
+        }
+    }
 
     const inputClasses =
         "mb-6 h-[38px] min-h-[3rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green";
@@ -32,67 +56,62 @@ const JoinBody = () => {
                                 create an account.
                             </p>
                         </div>
-                        <form className="grid grid-cols-[1fr,1fr] grid-rows-[1fr] gap-x-6 gap-y-0">
+                        <form
+                            onSubmit={onSubmit}
+                            className="grid grid-cols-[1fr,1fr] grid-rows-[1fr] gap-x-6 gap-y-0"
+                        >
                             <div className="col-span-2 row-span-1 block md:col-span-1">
-                                <label
-                                    htmlFor="FNAME"
-                                    className="mb-4 block font-bold opacity-70"
-                                >
+                                <label className="mb-4 block font-bold opacity-70">
                                     First name
+                                    <input
+                                        className={inputClasses}
+                                        placeholder="Enter first name"
+                                        name="firstName"
+                                        maxLength={256}
+                                        required
+                                    />
                                 </label>
-                                <input
-                                    className={inputClasses}
-                                    placeholder="Enter first name"
-                                    id="FNAME"
-                                    maxLength={256}
-                                    required
-                                />
                             </div>
                             <div className="col-span-2 row-span-1 block md:col-span-1">
-                                <label
-                                    htmlFor="LNAME"
-                                    className="mb-4 block font-bold opacity-70"
-                                >
+                                <label className="mb-4 block font-bold opacity-70">
                                     Last name
+                                    <input
+                                        className={inputClasses}
+                                        placeholder="Enter last name"
+                                        name="lastName"
+                                        maxLength={256}
+                                        required
+                                    />
                                 </label>
-                                <input
-                                    className={inputClasses}
-                                    placeholder="Enter last name"
-                                    id="LNAME"
-                                    maxLength={256}
-                                    required
-                                />
                             </div>
                             <div className="col-span-2 row-span-1 block">
-                                <label
-                                    htmlFor="EMAIL"
-                                    className="mb-4 block font-bold opacity-70"
-                                >
+                                <label className="mb-4 block font-bold opacity-70">
                                     Email
+                                    <input
+                                        className={inputClasses}
+                                        placeholder="Enter email"
+                                        name="email"
+                                        type="email"
+                                        maxLength={256}
+                                        required
+                                    />
                                 </label>
-                                <input
-                                    className={inputClasses}
-                                    placeholder="Enter email"
-                                    id="EMAIL"
-                                    maxLength={256}
-                                    required
-                                />
                             </div>
                             <div className="relative col-span-2 row-span-1 block">
-                                <label
-                                    htmlFor="PASSWORD"
-                                    className="mb-4 block font-bold opacity-70"
-                                >
+                                <label className="mb-4 block font-bold opacity-70">
                                     Password
+                                    <input
+                                        className={`${inputClasses} !mb-4 pr-10`}
+                                        type={
+                                            showPassword ? "text" : "password"
+                                        }
+                                        placeholder="Enter password"
+                                        name="password"
+                                        maxLength={256}
+                                        minLength={8}
+                                        required
+                                    />
                                 </label>
-                                <input
-                                    className={`${inputClasses} !mb-4 pr-10`}
-                                    type={showPassword ? "text" : "password"}
-                                    placeholder="Enter password"
-                                    id="PASSWORD"
-                                    maxLength={256}
-                                    required
-                                />
                                 <div className="absolute bottom-6 right-0 top-0 flex items-center pr-3">
                                     <button onClick={toggleShowPassword}>
                                         <img
@@ -110,6 +129,9 @@ const JoinBody = () => {
                                 </div>
                                 <p className="mb-8 text-sm text-gray-500">
                                     Use at least 8 characters in your password.
+                                </p>
+                                <p className="-mt-4 mb-6 text-sm text-red-500">
+                                    {errorMessage}
                                 </p>
                             </div>
                             <div className="col-span-2 row-span-1 font-light">

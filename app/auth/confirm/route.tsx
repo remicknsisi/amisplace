@@ -27,3 +27,24 @@ export async function GET(request: Request) {
     // TODO Setup error page for confirm failures
     return NextResponse.redirect(`${origin}/auth/auth-code-error`);
 }
+
+export async function POST(request: Request) {
+    const formData = await request.formData();
+    const token_hash = String(formData.get("token_hash"));
+    // TODO support token here (not just token_hash)
+    const type = formData.get("type") as EmailOtpType | null;
+
+    if (token_hash && type) {
+        const cookieStore = cookies();
+        const supabase = createClient(cookieStore);
+
+        const { error } = await supabase.auth.verifyOtp({
+            type,
+            token_hash,
+        });
+        if (error) {
+            return NextResponse.json({ success: false });
+        }
+    }
+    return NextResponse.json({ success: false });
+}
