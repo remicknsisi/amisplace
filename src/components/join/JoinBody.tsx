@@ -27,8 +27,8 @@ const JoinBody = () => {
 
         const data = await response.json();
         if (data?.success) {
-            // TODO: change to the next step page
-            router.push("/account");
+            sessionStorage.setItem("email", data?.email);
+            router.push("/confirm");
         } else if (data?.alreadyInUse) {
             // TODO: we should redirect to an error specific page
             setErrorMessage("Email already in use, try to log in instead?");

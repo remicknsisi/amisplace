@@ -23,7 +23,7 @@ export async function POST(request: Request) {
     });
 
     if (error) {
-        return NextResponse.json({ success: false });
+        return NextResponse.json({ success: false, email });
     }
 
     // This is a hacky way to check if the user has already registered.

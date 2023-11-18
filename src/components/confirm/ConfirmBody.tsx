@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 
 import { poppins } from "../../helpers/loadFont";
 import { useRouter } from "next/navigation";
@@ -8,6 +8,16 @@ import { useRouter } from "next/navigation";
 const ConfirmBody = () => {
     const router = useRouter();
     const [errorMessage, setErrorMessage] = useState("");
+    const [email, setEmail] = useState("");
+
+    useEffect(() => {
+        // Retrieve email from sessionStorage
+        const email = sessionStorage.getItem("email");
+        if (email) {
+            setEmail(email);
+            sessionStorage.removeItem("email");
+        }
+    }, []);
 
     async function onSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -45,8 +55,8 @@ const ConfirmBody = () => {
                         </div>
                         <p className="mb-4 mt-4 text-xl font-light opacity-70 md:mb-12">
                             {/* I don't want to use GET paramters here since it would allow user to inject any value */}
-                            Please enter the 6-character code we sent to TODO
-                            FIGURE OUT HOW TO PASS EMAIL.
+                            Please enter the 6-character code we sent to{" "}
+                            {email ? `${email}.` : "your email."}
                         </p>
                         <form
                             onSubmit={onSubmit}
