@@ -31,3 +31,4 @@ node_modules
 # Specific files
 !middleware.ts
 !utils/supabase/*
+!utils/zod-schemas/*
