@@ -19,23 +19,21 @@ const EditListingsPage = async () => {
         redirect("/login");
     }
 
-    // const { data, error } = await supabase
-    //     .from("profiles")
-    //     .select("admin")
-    //     .eq("id", session.user.id)
-    //     .single();
-    // if (error || !data?.admin) {
-    //     redirect("/");
-    // }
-    const { data: listings, error } = await supabase.from("listings").select();
+    const { data, error } = await supabase
+        .from("profiles")
+        .select("admin")
+        .eq("id", session.user.id)
+        .single();
+    if (error || !data?.admin) {
+        redirect("/");
+    }
+
+    const { data: listings, error: err } = await supabase.from("listings").select();
     if (error) {
-        console.log(`error fetching listings: ${error.message}`);
+        console.log(`error fetching listings: ${err?.message}`);
     }
 
     const fetchedListings = listings || [];
-
-    //getting block scope error here on 'error' variable
-    //Can I just fetch my listings data from the listingsTable component so that I can check for admin status here?
 
     return (
         <>

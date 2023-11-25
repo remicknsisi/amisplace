@@ -25,7 +25,7 @@ const EditListingModal = ({ onClose, listing }: EditListingModalProps) => {
         const data = await response.json();
         if (data?.success) {
             setIsLoading(false);
-            location.reload()
+            location.reload();
         } else {
             setErrorMessage("Could not update listing");
         }
