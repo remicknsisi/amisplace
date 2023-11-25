@@ -40,22 +40,24 @@ const ListingsTable = ({ listings }: ListingsTableProps) => {
                             <table className="w-full sm:block">
                                 <thead>
                                     <tr className="bg-teal-400">
-                                        <th className="p-3 text-left hidden md:table-cell lg:table-cell">
+                                        <th className="hidden p-3 text-left md:table-cell lg:table-cell">
                                             Host
                                         </th>
-                                        <th className="p-3 text-left hidden md:table-cell lg:table-cell">
+                                        <th className="hidden p-3 text-left md:table-cell lg:table-cell">
                                             Location
                                         </th>
-                                        <th className="p-3 text-left hidden md:table-cell lg:table-cell">
+                                        <th className="hidden p-3 text-left md:table-cell lg:table-cell">
                                             Price
                                         </th>
-                                        <th className="p-3 text-left hidden md:table-cell lg:table-cell">
+                                        <th className="hidden p-3 text-left md:table-cell lg:table-cell">
                                             Area
                                         </th>
-                                        <th className="p-3 text-left hidden md:table-cell lg:table-cell">
+                                        <th className="hidden p-3 text-left md:table-cell lg:table-cell">
                                             More Details Link
                                         </th>
-                                        <th className="p-3 text-left hidden md:table-cell lg:table-cell">Edit</th>
+                                        <th className="hidden p-3 text-left md:table-cell lg:table-cell">
+                                            Edit
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody className="flex-1">
@@ -81,17 +83,17 @@ const ListingsTable = ({ listings }: ListingsTableProps) => {
                                                     ""}
                                             </td>
                                             <td
-                                                className="border-grey-light cursor-pointer border p-3 text-red-400 hover:bg-gray-100 hover:font-medium hover:text-red-600 hidden md:table-cell lg:table-cell"
+                                                className="border-grey-light hidden cursor-pointer border p-3 text-red-400 hover:bg-gray-100 hover:font-medium hover:text-red-600 md:table-cell lg:table-cell"
                                                 onClick={() =>
                                                     toggleModal(listing)
                                                 }
                                             >
                                                 ✎
                                             </td>
-                                            <td 
-                                                className="font-bold border-grey-light border p-3 sm:table-cell md:hidden lg:hidden bg-teal-400"
+                                            <td
+                                                className="border-grey-light border bg-teal-400 p-3 font-bold sm:table-cell md:hidden lg:hidden"
                                                 onClick={() =>
-                                                toggleModal(listing)
+                                                    toggleModal(listing)
                                                 }
                                             >
                                                 Edit ✎
