@@ -28,7 +28,9 @@ const EditListingsPage = async () => {
         redirect("/");
     }
 
-    const { data: listings, error: err } = await supabase.from("listings").select();
+    const { data: listings, error: err } = await supabase
+        .from("listings")
+        .select();
     if (error) {
         console.log(`error fetching listings: ${err?.message}`);
     }

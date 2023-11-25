@@ -12,7 +12,9 @@ interface ListingsTableProps {
 
 const ListingsTable = ({ listings }: ListingsTableProps) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedListing, setSelectedListing] = useState<Listing | null>(null);
+    const [selectedListing, setSelectedListing] = useState<Listing | null>(
+        null
+    );
 
     const toggleModal = (listing: Listing) => {
         setSelectedListing(listing);
@@ -74,9 +76,11 @@ const ListingsTable = ({ listings }: ListingsTableProps) => {
                                             </td>
                                             <td
                                                 className="border-grey-light cursor-pointer border p-3 text-red-400 hover:bg-gray-100 hover:font-medium hover:text-red-600"
-                                                onClick={() => toggleModal(listing)}
+                                                onClick={() =>
+                                                    toggleModal(listing)
+                                                }
                                             >
-                                            ✎
+                                                ✎
                                             </td>
                                         </tr>
                                     ))}
