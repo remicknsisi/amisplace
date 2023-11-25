@@ -56,9 +56,12 @@ const GettingStartedBody = () => {
                                         setReferralInput(e.target.value)
                                     }
                                 />
-                                {referralInput.length === 0 && buttonClicked && (
-                                    <p className="text-sm text-red-500 mb-4 -mt-2">
-                                        {errorMessages.fieldRequired("This field")}
+                                {referralInput.length === 0 &&
+                                    buttonClicked && (
+                                    <p className="-mt-2 mb-4 text-sm text-red-500">
+                                        {errorMessages.fieldRequired(
+                                            "This field"
+                                        )}
                                     </p>
                                 )}
                             </div>

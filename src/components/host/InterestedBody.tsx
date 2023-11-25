@@ -41,7 +41,7 @@ const InterestedBody = () => {
                         <div className="col-span-2 row-span-1 mt-12 flex flex-col gap-4">
                             <div className="transition duration-200 ease-in-out hover:scale-105">
                                 <button
-                                    className="cursor-pointer rounded-md bg-green px-[2.625rem] py-3 text-center text-xl font-bold text-white w-full"
+                                    className="w-full cursor-pointer rounded-md bg-green px-[2.625rem] py-3 text-center text-xl font-bold text-white"
                                     onClick={() => router.push("/")}
                                     type="button"
                                 >
@@ -50,7 +50,7 @@ const InterestedBody = () => {
                             </div>
                             <div className="transition duration-200 ease-in-out hover:scale-105">
                                 <button
-                                    className="cursor-pointer rounded-md border border-green bg-white px-[2.625rem] py-3 text-center text-xl font-bold text-green w-full"
+                                    className="w-full cursor-pointer rounded-md border border-green bg-white px-[2.625rem] py-3 text-center text-xl font-bold text-green"
                                     onClick={() => router.push("/")}
                                     type="button"
                                 >
