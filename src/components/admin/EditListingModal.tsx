@@ -1,5 +1,4 @@
 import React, { FormEvent, useState } from "react";
-import { useRouter } from "next/navigation";
 import { Database } from "@/lib/database.types";
 
 type Listing = Database["public"]["Tables"]["listings"]["Row"];
@@ -12,9 +11,6 @@ interface EditListingModalProps {
 const EditListingModal = ({ onClose, listing }: EditListingModalProps) => {
     const [isLoading, setIsLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
-    // const [newDates, setNewDates] = useState(listing?.available_dates_string ?? "");
-    // const [newPrice, setNewPrice] = useState(listing?.price ?? 0);
-    const router = useRouter();
 
     async function onSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -28,9 +24,8 @@ const EditListingModal = ({ onClose, listing }: EditListingModalProps) => {
 
         const data = await response.json();
         if (data?.success) {
-            // TODO: Do we need a new page? Should we just update this one? Not sure
-            router.push("/admin/listings");
-            //reload page here for now
+            setIsLoading(false);
+            location.reload()
         } else {
             setErrorMessage("Could not update listing");
         }

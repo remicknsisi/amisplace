@@ -76,6 +76,7 @@ const ListingsTable = ({ listings }: ListingsTableProps) => {
                                                 className="border-grey-light cursor-pointer border p-3 text-red-400 hover:bg-gray-100 hover:font-medium hover:text-red-600"
                                                 onClick={() => toggleModal(listing)}
                                             >
+                                            ✎
                                             </td>
                                         </tr>
                                     ))}
