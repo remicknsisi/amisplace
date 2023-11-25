@@ -32,27 +32,33 @@ const ListingsTable = ({ listings }: ListingsTableProps) => {
         <div className="px-5 md:px-8 lg:px-16">
             <div className="mx-auto w-full max-w-[80rem]">
                 <div className="grid-cols-1fr mb-28 grid items-center justify-center gap-x-10 gap-y-12 pt-16 lg:grid-cols-[1fr,1fr]">
-                    <div className="mb-6 text-center lg:mb-0">
-                        <h1 className="mb-6 text-center text-[1.5rem] font-bold md:text-2xl lg:text-3xl">
+                    <div className="mb-6 text-center">
+                        <h1 className="mb-4 text-center text-[1.5rem] font-bold md:text-2xl lg:text-3xl">
                             Listings Editor
                         </h1>
                         <div className="mx-auto grid max-w-[34rem] grid-cols-[1fr] sm:max-w-none sm:grid-cols-[1fr,1fr] md:grid-cols-[1fr,1fr] lg:grid-cols-[1fr,1fr,1fr]">
-                            <table className="w-full">
+                            <table className="w-full sm:block">
                                 <thead>
                                     <tr className="bg-teal-400">
-                                        <th className="p-3 text-left">Host</th>
-                                        <th className="p-3 text-left">
+                                        <th className="p-3 text-left hidden md:table-cell lg:table-cell">
+                                            Host
+                                        </th>
+                                        <th className="p-3 text-left hidden md:table-cell lg:table-cell">
                                             Location
                                         </th>
-                                        <th className="p-3 text-left">Price</th>
-                                        <th className="p-3 text-left">Area</th>
-                                        <th className="p-3 text-left">
+                                        <th className="p-3 text-left hidden md:table-cell lg:table-cell">
+                                            Price
+                                        </th>
+                                        <th className="p-3 text-left hidden md:table-cell lg:table-cell">
+                                            Area
+                                        </th>
+                                        <th className="p-3 text-left hidden md:table-cell lg:table-cell">
                                             More Details Link
                                         </th>
-                                        <th className="p-3 text-left">Edit</th>
+                                        <th className="p-3 text-left hidden md:table-cell lg:table-cell">Edit</th>
                                     </tr>
                                 </thead>
-                                <tbody className="flex-1 sm:flex-none">
+                                <tbody className="flex-1">
                                     {listings.map((listing) => (
                                         <tr
                                             key={listing.id}
@@ -75,12 +81,20 @@ const ListingsTable = ({ listings }: ListingsTableProps) => {
                                                     ""}
                                             </td>
                                             <td
-                                                className="border-grey-light cursor-pointer border p-3 text-red-400 hover:bg-gray-100 hover:font-medium hover:text-red-600"
+                                                className="border-grey-light cursor-pointer border p-3 text-red-400 hover:bg-gray-100 hover:font-medium hover:text-red-600 hidden md:table-cell lg:table-cell"
                                                 onClick={() =>
                                                     toggleModal(listing)
                                                 }
                                             >
                                                 ✎
+                                            </td>
+                                            <td 
+                                                className="font-bold border-grey-light border p-3 sm:table-cell md:hidden lg:hidden bg-teal-400"
+                                                onClick={() =>
+                                                toggleModal(listing)
+                                                }
+                                            >
+                                                Edit ✎
                                             </td>
                                         </tr>
                                     ))}

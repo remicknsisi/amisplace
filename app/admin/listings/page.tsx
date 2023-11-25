@@ -19,19 +19,19 @@ const EditListingsPage = async () => {
         redirect("/login");
     }
 
-    const { data, error } = await supabase
-        .from("profiles")
-        .select("admin")
-        .eq("id", session.user.id)
-        .single();
-    if (error || !data?.admin) {
-        redirect("/");
-    }
+    // const { data, error } = await supabase
+    //     .from("profiles")
+    //     .select("admin")
+    //     .eq("id", session.user.id)
+    //     .single();
+    // if (error || !data?.admin) {
+    //     redirect("/");
+    // }
 
     const { data: listings, error: err } = await supabase
         .from("listings")
         .select();
-    if (error) {
+    if (err) {
         console.log(`error fetching listings: ${err?.message}`);
     }
 
