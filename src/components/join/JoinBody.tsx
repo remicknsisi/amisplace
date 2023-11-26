@@ -8,7 +8,6 @@ import { poppins } from "../../helpers/loadFont";
 const JoinBody = () => {
     const router = useRouter();
     const [showPassword, setShowPassword] = useState(false);
-    const [hasAgreed, setHasAgreed] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
 
     const toggleShowPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -135,7 +134,7 @@ const JoinBody = () => {
                                 </p>
                             </div>
                             <div className="col-span-2 row-span-1 font-light">
-                                By joining you agree to Amisplace&apos;s{" "}
+                                By continuing, you agree to Amisplace&apos;s{" "}
                                 <a
                                     href="https://amisplace.notion.site/Terms-of-Service-5fd47ee6d6a14396b70d7c9daa355bfd?pvs=4"
                                     target="_blank"
@@ -143,48 +142,18 @@ const JoinBody = () => {
                                 >
                                     <u>Terms</u>
                                 </a>{" "}
-                                and{" "}
+                                and acknowledge the&nbsp;
                                 <a
                                     href="https://amisplace.notion.site/Privacy-Policy-cdf7a52254574cc2a330ef80a4a17c22"
                                     target="_blank"
                                     rel="noreferrer"
                                 >
-                                    <u>Privacy Policy</u>
+                                    <u>Privacy Policy.</u>
                                 </a>
-                                .
                             </div>
-                            <div className="col-span-2 row-span-1 my-4">
-                                <input
-                                    id="terms"
-                                    type="checkbox"
-                                    checked={hasAgreed}
-                                    onChange={(e) =>
-                                        setHasAgreed(e.target.checked)
-                                    }
-                                    className="mt-1 h-4 w-4 rounded border-gray-300 align-top text-green focus:ring-green"
-                                />
-                                <label
-                                    htmlFor="terms"
-                                    className="ml-2 font-light"
-                                >
-                                    I have read and agree to the Terms of
-                                    Service and Privacy Policy.
-                                </label>
-                            </div>
-                            <div
-                                className={`col-span-2 row-span-1 mt-4 flex flex-col ${
-                                    hasAgreed
-                                        ? "transition duration-200 ease-in-out hover:scale-105"
-                                        : ""
-                                }`}
-                            >
+                            <div className="col-span-2 row-span-1 mt-4 flex flex-col transition duration-200 ease-in-out hover:scale-105">
                                 <button
-                                    className={`cursor-pointer rounded-md ${
-                                        !hasAgreed
-                                            ? "bg-green/[.15]"
-                                            : "bg-green"
-                                    } px-[2.625rem] py-3 text-center text-xl font-bold text-white`}
-                                    disabled={!hasAgreed}
+                                    className="cursor-pointer rounded-md bg-green px-[2.625rem] py-3 text-center text-xl font-bold text-white"
                                 >
                                     Submit
                                 </button>
