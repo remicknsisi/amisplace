@@ -21,7 +21,7 @@ const AboutHomeBody = () => {
                     <div className="mx-auto w-full max-w-[80rem] pb-[4.5rem]">
                         <div className="flex flex-col justify-center pt-4 text-left">
                             <h1
-                                className={`${poppins.className} text-[1.75rem] font-bold md:text-[2.5rem] mb-8`}
+                                className={`${poppins.className} mb-8 text-[1.75rem] font-bold md:text-[2.5rem]`}
                             >
                                 Last step
                             </h1>
@@ -32,9 +32,13 @@ const AboutHomeBody = () => {
                                     className="mb-4 block font-bold opacity-70"
                                     htmlFor="more-info"
                                 >
-                                    Anything else you&apos;d like us to know?&nbsp;<span className="font-light">(Optional)</span>
+                                    Anything else you&apos;d like us to
+                                    know?&nbsp;
+                                    <span className="font-light">
+                                        (Optional)
+                                    </span>
                                     <textarea
-                                        className="mb-4 mt-2 min-h-[10rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green resize-none font-light"
+                                        className="mb-4 mt-2 min-h-[10rem] w-full resize-none rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] font-light focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green"
                                         name="more-info"
                                         maxLength={350}
                                     />

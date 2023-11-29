@@ -10,6 +10,7 @@ module.exports = {
     "plugin:@next/next/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:tailwindcss/recommended",
     "prettier"
   ],
   overrides: [

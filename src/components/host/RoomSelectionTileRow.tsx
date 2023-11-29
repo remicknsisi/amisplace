@@ -20,9 +20,7 @@ const RoomSelectionTileRow = ({
         <div className="flex justify-evenly">
             <button
                 className={`${buttonClasses} ${
-                    selectedValue === "1"
-                        ? "border-2 bg-[#EAF2EE]"
-                        : ""
+                    selectedValue === "1" ? "border-2 bg-[#EAF2EE]" : ""
                 }`}
                 onClick={handleButtonClick}
                 value="1"
@@ -31,9 +29,7 @@ const RoomSelectionTileRow = ({
             </button>
             <button
                 className={`${buttonClasses} ${
-                    selectedValue === "2"
-                        ? "border-2 bg-[#EAF2EE]"
-                        : ""
+                    selectedValue === "2" ? "border-2 bg-[#EAF2EE]" : ""
                 }`}
                 onClick={handleButtonClick}
                 value="2"
@@ -42,9 +38,7 @@ const RoomSelectionTileRow = ({
             </button>
             <button
                 className={`${buttonClasses} ${
-                    selectedValue === "3"
-                        ? "border-2 bg-[#EAF2EE]"
-                        : ""
+                    selectedValue === "3" ? "border-2 bg-[#EAF2EE]" : ""
                 }`}
                 onClick={handleButtonClick}
                 value="3"
@@ -53,9 +47,7 @@ const RoomSelectionTileRow = ({
             </button>
             <button
                 className={`${buttonClasses} ${
-                    selectedValue === "4"
-                        ? "border-2 bg-[#EAF2EE]"
-                        : ""
+                    selectedValue === "4" ? "border-2 bg-[#EAF2EE]" : ""
                 }`}
                 onClick={handleButtonClick}
                 value="4"
@@ -64,9 +56,7 @@ const RoomSelectionTileRow = ({
             </button>
             <button
                 className={`${buttonClasses} ${
-                    selectedValue === "5"
-                        ? "border-2 bg-[#EAF2EE]"
-                        : ""
+                    selectedValue === "5" ? "border-2 bg-[#EAF2EE]" : ""
                 }`}
                 onClick={handleButtonClick}
                 value="5"
@@ -75,9 +65,7 @@ const RoomSelectionTileRow = ({
             </button>
             <button
                 className={`${buttonClasses} ${
-                    selectedValue === "6+"
-                        ? "border-2 bg-[#EAF2EE]"
-                        : ""
+                    selectedValue === "6+" ? "border-2 bg-[#EAF2EE]" : ""
                 }`}
                 onClick={handleButtonClick}
                 value="6+"

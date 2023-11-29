@@ -12,7 +12,7 @@ const InterestedBody = () => {
     return (
         <div className="mt-[4.5rem] flex justify-center md:mt-0">
             <div className="flex max-w-[41rem] justify-start">
-                <div className="mt-4 sm:mt-28 px-5 md:px-8">
+                <div className="mt-4 px-5 sm:mt-28 md:px-8">
                     <div>
                         <BackButton
                             onClick={() => router.push("/host/gettingStarted")}
