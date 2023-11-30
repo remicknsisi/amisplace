@@ -36,7 +36,7 @@ module.exports = {
     "no-unreachable": "error",
     "object-curly-spacing": ["error", "always"],
     semi: "error",
-    "space-before-function-paren": ["error", {"anonymous": "always", "named": "never", "asyncArrow": "always"}],
+    "space-before-function-paren": ["error", { "anonymous": "always", "named": "never", "asyncArrow": "always" }],
   },
   settings: {
     react: {
