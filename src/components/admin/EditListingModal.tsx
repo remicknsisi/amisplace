@@ -33,7 +33,7 @@ const EditListingModal = ({ onClose, listing }: EditListingModalProps) => {
 
     return (
         <div className="fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center">
-            <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div className="absolute inset-0 bg-black bg-opacity-50/50"></div>
             {isLoading ? (
                 <div className="z-10 max-w-md rounded-md bg-white p-6">
                     <p>Submitting changes...</p>

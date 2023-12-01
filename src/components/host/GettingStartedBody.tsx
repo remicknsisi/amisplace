@@ -58,12 +58,12 @@ const GettingStartedBody = () => {
                                 />
                                 {referralInput.length === 0 &&
                                     buttonClicked && (
-                                    <p className="-mt-2 mb-4 text-sm text-red-500">
-                                        {errorMessages.fieldRequired(
-                                            "This field"
-                                        )}
-                                    </p>
-                                )}
+                                        <p className="-mt-2 mb-4 text-sm text-red-500">
+                                            {errorMessages.fieldRequired(
+                                                "This field"
+                                            )}
+                                        </p>
+                                    )}
                             </div>
                             <div className="relative col-span-2 row-span-1 block">
                                 <label
