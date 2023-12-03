@@ -15,7 +15,7 @@ const InterestedBody = () => {
                 <div className="mt-4 px-5 sm:mt-28 md:px-8">
                     <div>
                         <BackButton
-                            onClick={() => router.push("/host/gettingStarted")}
+                            onClick={() => router.push("/host/getting-started")}
                         />
                     </div>
                     <div className="mx-auto w-full max-w-[80rem] pb-[4.5rem]">
