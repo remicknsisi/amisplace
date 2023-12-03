@@ -6,6 +6,7 @@ import { createClient } from "@/utils/supabase/server";
 import Navbar from "../../../src/components/common/Navbar";
 import Footer from "../../../src/components/homepage/Footer";
 import AboutHomeBody from "../../../src/components/host/AboutHomeBody";
+import Layout from "../../../src/components/layout";
 
 const AboutHome = async () => {
     const cookieStore = cookies();
@@ -18,7 +19,9 @@ const AboutHome = async () => {
     return (
         <>
             <Navbar session={session} requiresPadding={false} />
-            <AboutHomeBody />
+            <Layout>
+                <AboutHomeBody />
+            </Layout>
             <Footer />
         </>
     );

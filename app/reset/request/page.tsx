@@ -6,6 +6,7 @@ import { createClient } from "@/utils/supabase/server";
 import Navbar from "../../../src/components/common/Navbar";
 import Footer from "../../../src/components/homepage/Footer";
 import ResetRequestBody from "../../../src/components/reset-request/ResetRequestBody";
+import Layout from "../../../src/components/layout";
 
 const Reset = async () => {
     const cookieStore = cookies();
@@ -18,7 +19,9 @@ const Reset = async () => {
     return (
         <>
             <Navbar session={session} requiresPadding={false} />
-            <ResetRequestBody />
+            <Layout>
+                <ResetRequestBody />
+            </Layout>
             <Footer />
         </>
     );

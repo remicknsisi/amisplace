@@ -6,6 +6,7 @@ import { createClient } from "@/utils/supabase/server";
 import Navbar from "../../../src/components/common/Navbar";
 import Footer from "../../../src/components/homepage/Footer";
 import VerifyEmailBody from "../../../src/components/join/VerifyEmailBody";
+import Layout from "../../../src/components/layout";
 
 const VerifyEmail = async () => {
     const cookieStore = cookies();
@@ -18,7 +19,9 @@ const VerifyEmail = async () => {
     return (
         <>
             <Navbar session={session} requiresPadding={false} />
-            <VerifyEmailBody />
+            <Layout>
+                <VerifyEmailBody />
+            </Layout>
             <Footer />
         </>
     );
