@@ -147,7 +147,10 @@ const JoinBody = () => {
                         </a>
                     </div>
                     <div className="col-span-2 row-span-1 mt-4 flex flex-col transition duration-200 ease-in-out hover:scale-105">
-                        <button className="cursor-pointer rounded-md bg-green px-[2.625rem] py-3 text-center text-xl font-bold text-white">
+                        <button
+                            className="cursor-pointer rounded-md bg-green px-[2.625rem] py-3 text-center text-xl font-bold text-white"
+                            type="submit"
+                        >
                             Submit
                         </button>
                     </div>

@@ -1,25 +1,30 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 
 import { useRouter } from "next/navigation";
 
 import { poppins } from "../../helpers/loadFont";
-import { errorMessages } from "../../helpers/errorMessages";
 
-const GettingStartedBody = () => {
+const GettingStartedBody = ({ userId }: { userId: string }) => {
     const router = useRouter();
-    const [referralInput, setReferralInput] = useState("");
-    const [buttonClicked, setButtonClicked] = useState(false);
 
-    const handleButtonClick = () => {
-        setButtonClicked(true);
-        if (referralInput.length === 0) {
-            return;
-        } else {
+    async function onSubmit(event: FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+
+        const formData = new FormData(event.currentTarget);
+        const response = await fetch(`/api/profile/${userId}`, {
+            method: "PATCH",
+            body: formData,
+        });
+
+        const data = await response.json();
+        if (data?.success) {
             router.push("/host/interested");
+        } else {
+            // TODO: deal with error
         }
-    };
+    }
 
     return (
         <div className="mt-[4.5rem] flex justify-center md:mt-0">
@@ -38,54 +43,39 @@ const GettingStartedBody = () => {
                                 interested in joining Amisplace.
                             </p>
                         </div>
-                        <form className="mb-4 mt-6 grid grid-cols-[1fr,1fr] grid-rows-[1fr] gap-x-6 gap-y-0">
+                        <form
+                            className="mb-4 mt-6 grid grid-cols-[1fr,1fr] grid-rows-[1fr] gap-x-6 gap-y-0"
+                            onSubmit={onSubmit}
+                        >
                             <div className="relative col-span-2 row-span-1 block">
-                                <label
-                                    htmlFor="REFERRAL"
-                                    className="mb-4 block font-bold opacity-70"
-                                >
+                                <label className="mb-4 block font-bold opacity-70">
                                     Do you know anyone from Amisplace? If so,
                                     who?
+                                    <input
+                                        className="mb-4 h-[38px] min-h-[3rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green"
+                                        name="application_referral_first_name"
+                                        maxLength={256}
+                                        required
+                                    />
                                 </label>
-                                <input
-                                    className="mb-4 h-[38px] min-h-[3rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green"
-                                    id="REFERRAL"
-                                    maxLength={256}
-                                    required
-                                    onBlur={(e) =>
-                                        setReferralInput(e.target.value)
-                                    }
-                                />
-                                {referralInput.length === 0 &&
-                                    buttonClicked && (
-                                        <p className="-mt-2 mb-4 text-sm text-red-500">
-                                            {errorMessages.fieldRequired(
-                                                "This field"
-                                            )}
-                                        </p>
-                                    )}
                             </div>
                             <div className="relative col-span-2 row-span-1 block">
-                                <label
-                                    htmlFor="HEAR"
-                                    className="mb-4 block font-bold opacity-70"
-                                >
+                                <label className="mb-4 block font-bold opacity-70">
                                     Otherwise, how did you hear about us?
                                     <span className="ml-1 font-light">
                                         (Optional)
                                     </span>
+                                    <input
+                                        className="mb-4 h-[38px] min-h-[3rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green"
+                                        name="application_heard_from"
+                                        maxLength={256}
+                                    />
                                 </label>
-                                <input
-                                    className="mb-4 h-[38px] min-h-[3rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green"
-                                    id="HEAR"
-                                    maxLength={256}
-                                />
                             </div>
                             <div className="col-span-2 row-span-1 mt-12 flex flex-col transition duration-200 ease-in-out hover:scale-105">
                                 <button
                                     className="cursor-pointer rounded-md bg-green px-[2.625rem] py-3 text-center text-xl font-bold text-white"
-                                    onClick={handleButtonClick}
-                                    type="button"
+                                    type="submit"
                                 >
                                     Next
                                 </button>
