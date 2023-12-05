@@ -23,17 +23,32 @@ export async function PATCH(
         });
     }
 
-    const formData = await request.formData();
-    const response = profileSchema
-        .partial()
-        .safeParse(Object.fromEntries(formData.entries()));
-    if (!response.success) {
-        // Probably want to parse the error before returning?
-        return NextResponse.json({ error: response.error });
+    // TODO: allow if admin?
+    if (session.user.id != id) {
+        return NextResponse.json(
+            { error: "Unauthorized action" },
+            { status: 401 }
+        );
     }
 
-    // TODO verify we have any fields set
-    // TODO update profile
-    console.log("Updating profile", id);
+    const formData = await request.formData();
+    const formDataParsed = profileSchema
+        .partial()
+        .safeParse(Object.fromEntries(formData.entries()));
+    if (!formDataParsed.success) {
+        // Probably want to parse the error before returning?
+        return NextResponse.json({ error: formDataParsed.error });
+    }
+    // TODO: should do some checks on what field can be updated depending on the user's status
+    const { error } = await supabase
+        .from("profiles")
+        .update(formDataParsed.data)
+        .eq("id", id);
+
+    if (error) {
+        return NextResponse.json({ error });
+    }
+
+    console.log("Updated profile", id);
     return NextResponse.json({ success: true });
 }

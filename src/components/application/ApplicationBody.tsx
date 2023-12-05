@@ -1,20 +1,45 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { poppins } from "../../helpers/loadFont";
+import { profilePartialType } from "@/utils/zod-schemas/profile";
 
 enum EntranceStatus {
     KNOWN = "known",
     UNKNOWN = "unknown",
 }
 
-const ApplicationBody = () => {
+const ApplicationBody = ({ profile }: { profile: profilePartialType }) => {
     const router = useRouter();
+    const defaultEntranceStatus =
+        profile.application_referral_first_name ||
+        profile.application_referral_last_name
+            ? EntranceStatus.KNOWN
+            : profile.application_heard_from
+            ? EntranceStatus.UNKNOWN
+            : null;
     const [optionSelected, setOptionSelected] = useState<EntranceStatus | null>(
-        null
+        defaultEntranceStatus
     );
+
+    async function onSubmit(event: FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+
+        const formData = new FormData(event.currentTarget);
+        const response = await fetch(`/api/profiles/${profile.id}`, {
+            method: "PATCH",
+            body: formData,
+        });
+
+        const data = await response.json();
+        if (data?.success) {
+            router.push("/host/interested");
+        } else {
+            // TODO: deal with error
+        }
+    }
     return (
         <div className="mt-[4.5rem] flex justify-center md:mt-0">
             <div className="flex max-w-[41rem] justify-start">
@@ -31,7 +56,10 @@ const ApplicationBody = () => {
                                 important we get to know each one of you
                                 interested in joining Amisplace.
                             </p>
-                            <form className="grid grid-cols-[1fr,1fr] grid-rows-[1fr] gap-x-6 gap-y-0">
+                            <form
+                                className="grid grid-cols-[1fr,1fr] grid-rows-[1fr] gap-x-6 gap-y-0"
+                                onSubmit={onSubmit}
+                            >
                                 <div className="col-span-2 mt-4 border-b border-b-[#C5D1CF]">
                                     <label
                                         className="mb-4 block font-bold opacity-70"
@@ -44,16 +72,16 @@ const ApplicationBody = () => {
                                         </p>
                                         <textarea
                                             className="mb-4 mt-2 min-h-[10rem] w-full resize-none rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] font-light focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green"
-                                            name="introduction"
+                                            name="application_about"
+                                            defaultValue={
+                                                profile.application_about
+                                            }
                                             maxLength={350}
                                         />
                                     </label>
                                 </div>
                                 <div className="col-span-2 mt-8">
-                                    <label
-                                        className="mb-4 block font-bold opacity-70"
-                                        htmlFor="location"
-                                    >
+                                    <label className="mb-4 block font-bold opacity-70">
                                         Where are you based?&nbsp;
                                         <span className="ml-1">&#127758;</span>
                                         <p className="font-light">
@@ -61,7 +89,8 @@ const ApplicationBody = () => {
                                         </p>
                                         <input
                                             className="my-4 h-[38px] min-h-[3rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green"
-                                            id="location"
+                                            name="location_full"
+                                            defaultValue={profile.location_full}
                                             maxLength={256}
                                             required
                                         />
@@ -74,9 +103,12 @@ const ApplicationBody = () => {
                                     <label className="flex">
                                         <input
                                             type="radio"
-                                            name="homeType"
-                                            value="entire_place"
+                                            name="entrance_status"
                                             className="mr-2"
+                                            defaultChecked={
+                                                defaultEntranceStatus ==
+                                                EntranceStatus.KNOWN
+                                            }
                                             onClick={() =>
                                                 setOptionSelected(
                                                     EntranceStatus.KNOWN
@@ -88,9 +120,12 @@ const ApplicationBody = () => {
                                     <label className="mb-2 mt-6 flex">
                                         <input
                                             type="radio"
-                                            name="homeType"
-                                            value="private_room"
+                                            name="entrance_status"
                                             className="mr-2 font-light"
+                                            defaultChecked={
+                                                defaultEntranceStatus ==
+                                                EntranceStatus.UNKNOWN
+                                            }
                                             onClick={() =>
                                                 setOptionSelected(
                                                     EntranceStatus.UNKNOWN
@@ -121,7 +156,10 @@ const ApplicationBody = () => {
                                                 <input
                                                     className="mb-6 h-[38px] min-h-[3rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green"
                                                     placeholder="Enter first name"
-                                                    name="firstName"
+                                                    name="application_referral_first_name"
+                                                    defaultValue={
+                                                        profile.application_referral_first_name
+                                                    }
                                                     maxLength={256}
                                                     required
                                                 />
@@ -133,7 +171,10 @@ const ApplicationBody = () => {
                                                 <input
                                                     className="mb-6 h-[38px] min-h-[3rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green"
                                                     placeholder="Enter last name"
-                                                    name="lastName"
+                                                    name="application_referral_last_name"
+                                                    defaultValue={
+                                                        profile.application_referral_last_name
+                                                    }
                                                     maxLength={256}
                                                     required
                                                 />
@@ -143,29 +184,26 @@ const ApplicationBody = () => {
                                 )}
                                 {optionSelected === EntranceStatus.UNKNOWN && (
                                     <div className="col-span-2">
-                                        <label
-                                            className="mb-4 block font-bold opacity-70"
-                                            htmlFor="referral-reason"
-                                        >
+                                        <label className="mb-4 block font-bold opacity-70">
                                             How did you hear about Amisplace?
                                             <input
                                                 className="my-4 h-[38px] min-h-[3rem] w-full rounded-lg border border-solid border-[#C5D1CF] p-3 text-[14px] focus:border-green focus:outline-none focus:ring-0 focus-visible:border-green"
-                                                id="referral-reason"
+                                                name="application_heard_from"
                                                 maxLength={256}
                                                 required
                                             />
                                         </label>
                                     </div>
                                 )}
+                                <div className="col-span-2 mt-4 flex flex-col transition duration-200 ease-in-out hover:scale-105">
+                                    <button
+                                        className="cursor-pointer rounded-md bg-green px-[2.625rem] py-3 text-center text-xl font-bold text-white"
+                                        type="submit"
+                                    >
+                                        Submit
+                                    </button>
+                                </div>
                             </form>
-                            <div className="mt-4 flex flex-col transition duration-200 ease-in-out hover:scale-105">
-                                <button
-                                    className="cursor-pointer rounded-md bg-green px-[2.625rem] py-3 text-center text-xl font-bold text-white"
-                                    onClick={() => router.push("/host/interested")}
-                                >
-                                    Submit
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>
