@@ -89,7 +89,7 @@ const Navbar = ({ requiresPadding = true, session }: NavbarProps) => {
                 </div>
             </div>
             <div
-                className={`fixed z-10 mx-auto w-full duration-500 ease-in-out md:hidden${
+                className={`fixed z-10 mx-auto w-full duration-500 ease-in-out md:hidden ${
                     isMenuOpen ? "translate-y-0" : "-translate-y-full"
                 }`}
             >
@@ -103,8 +103,12 @@ const Navbar = ({ requiresPadding = true, session }: NavbarProps) => {
                         </button>
                     </div>
                     {session ? (
-                        <form action="/auth/logout" method="post">
-                            <button className="color-[#222222] flex items-center justify-center px-4 py-6 text-[.9375rem] font-semibold tracking-wide transition duration-200 ease-in-out hover:text-green">
+                        <form
+                            action="/auth/logout"
+                            method="post"
+                            className="flex w-full justify-center"
+                        >
+                            <button className="color-[#222222] flex items-center justify-center px-4 pt-6 text-[.9375rem] font-semibold tracking-wide transition duration-200 ease-in-out hover:text-green">
                                 Logout
                             </button>
                         </form>
