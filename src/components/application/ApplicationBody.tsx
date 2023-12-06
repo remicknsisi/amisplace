@@ -51,7 +51,7 @@ const ApplicationBody = ({ profile }: { profile: profilePartialType }) => {
                             >
                                 Application
                             </h1>
-                            <p className="mb-4 mt-4 text-xl font-light opacity-70">
+                            <p className="my-4 text-xl font-light opacity-70">
                                 Our community is built on trust, so it&apos;s
                                 important we get to know each one of you
                                 interested in joining Amisplace.

@@ -63,10 +63,11 @@ const Navbar = ({ requiresPadding = true, session }: NavbarProps) => {
                             )}
                             <a
                                 href="/about"
-                                className={`${currentPath === "/about"
+                                className={`${
+                                    currentPath === "/about"
                                         ? "text-green"
                                         : "text-[#222222]"
-                                    }  flex items-center justify-center px-4 py-6 text-[.9375rem] font-semibold tracking-wide transition duration-200 ease-in-out hover:text-green`}
+                                }  flex items-center justify-center px-4 py-6 text-[.9375rem] font-semibold tracking-wide transition duration-200 ease-in-out hover:text-green`}
                             >
                                 About us
                             </a>
@@ -90,8 +91,9 @@ const Navbar = ({ requiresPadding = true, session }: NavbarProps) => {
                 </div>
             </div>
             <div
-                className={`fixed z-10 mx-auto w-full transform duration-500 ease-in-out md:hidden ${isMenuOpen ? "translate-y-0" : "-translate-y-full"
-                    }`}
+                className={`fixed z-10 mx-auto w-full transform duration-500 ease-in-out md:hidden ${
+                    isMenuOpen ? "translate-y-0" : "-translate-y-full"
+                }`}
             >
                 <div className={`bg-white ${requiresPadding && "mt-16"}`}>
                     <div className="flex w-full justify-center">
