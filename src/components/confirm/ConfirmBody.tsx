@@ -53,7 +53,7 @@ const ConfirmBody = () => {
                                 Verify your email
                             </h1>
                         </div>
-                        <p className="mb-4 mt-4 text-xl font-light opacity-70 md:mb-12">
+                        <p className="my-4 text-xl font-light opacity-70 md:mb-12">
                             {/* I don't want to use GET paramters here since it would allow user to inject any value */}
                             Please enter the 6-character code we sent to{" "}
                             {email ? `${email}.` : "your email."}

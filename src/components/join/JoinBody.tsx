@@ -47,7 +47,7 @@ const JoinBody = () => {
                     >
                         Apply to join
                     </h1>
-                    <p className="mb-4 mt-4 text-xl font-light opacity-70 md:mb-12">
+                    <p className="my-4 text-xl font-light opacity-70 md:mb-12">
                         We&apos;d love to have you be a part of Amisplace -- but
                         first, you&apos;ll need to create an account.
                     </p>

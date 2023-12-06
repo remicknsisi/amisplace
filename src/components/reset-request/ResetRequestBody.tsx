@@ -41,7 +41,7 @@ const ResetRequestBody = () => {
                     >
                         Reset password
                     </h1>
-                    <p className="mb-4 mt-4 text-xl font-light opacity-70">
+                    <p className="my-4 text-xl font-light opacity-70">
                         Enter your email and we&apos;ll send you a link to reset
                         your password.
                     </p>

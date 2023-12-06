@@ -67,13 +67,13 @@ const ListingsBody = ({ listings }: ListingsBodyProps) => {
                                         {FILTER_MAP[filter]}
                                     </span>
                                     <span
-                                        className={`arrow ml-4 transform border-l-[5px] border-r-[5px] border-t-[6px] border-transparent border-t-green transition-transform duration-300 ease-in-out ${
+                                        className={`arrow ml-4 border-x-[5px] border-t-[6px] border-transparent border-t-green transition-transform duration-300 ease-in-out${
                                             isActive && "rotate-180"
                                         }`}
                                     />
                                 </button>
                                 <ul
-                                    className={`transform transition-all duration-500 ${
+                                    className={`transition-all duration-500${
                                         isActive
                                             ? "visible scale-y-100 opacity-100"
                                             : "invisible scale-y-0 opacity-0"

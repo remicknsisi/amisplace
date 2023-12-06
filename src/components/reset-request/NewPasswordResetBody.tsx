@@ -17,7 +17,7 @@ const NewPasswordResetBody = () => {
                     >
                         Reset password
                     </h1>
-                    <p className="mb-4 mt-4 text-xl font-light opacity-70">
+                    <p className="my-4 text-xl font-light opacity-70">
                         Your password has been reset.
                     </p>
                 </div>

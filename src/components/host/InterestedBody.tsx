@@ -18,7 +18,7 @@ const InterestedBody = () => {
                 <h4 className="mt-2 text-[1.2rem] font-bold">
                     Thanks for your interest in Amisplace!
                 </h4>
-                <p className="mb-4 mt-4 text-xl font-light opacity-70">
+                <p className="my-4 text-xl font-light opacity-70">
                     If you&apos;d like to strengthen your application,
                     we&apos;re currently prioritizing hosts -- if you&apos;re
                     interested, let us know along with some key information

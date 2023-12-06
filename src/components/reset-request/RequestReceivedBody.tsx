@@ -16,7 +16,7 @@ const RequestReceivedBody = () => {
                 >
                     Request received
                 </h1>
-                <p className="mb-4 mt-4 text-xl font-light opacity-70">
+                <p className="my-4 text-xl font-light opacity-70">
                     You will receive an email from us shortly.
                 </p>
                 <p className="mt-0 font-light tracking-wide">

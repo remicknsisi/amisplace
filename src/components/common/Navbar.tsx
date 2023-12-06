@@ -89,7 +89,7 @@ const Navbar = ({ requiresPadding = true, session }: NavbarProps) => {
                 </div>
             </div>
             <div
-                className={`fixed z-10 mx-auto w-full transform duration-500 ease-in-out md:hidden ${
+                className={`fixed z-10 mx-auto w-full duration-500 ease-in-out md:hidden${
                     isMenuOpen ? "translate-y-0" : "-translate-y-full"
                 }`}
             >

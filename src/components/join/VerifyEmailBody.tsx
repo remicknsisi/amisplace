@@ -37,7 +37,7 @@ const VerifyEmailBody = () => {
                     >
                         Verify your email
                     </h1>
-                    <p className="mb-4 mt-4 text-[1.2rem] font-light opacity-70">
+                    <p className="my-4 text-[1.2rem] font-light opacity-70">
                         Please enter the 6-character code we sent to&nbsp;
                         <span className="font-bold">emily@amisplace.com</span>.
                     </p>
