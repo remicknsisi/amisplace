@@ -1,11 +1,11 @@
+import { createClient } from "@/utils/supabase/server";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import React from "react";
 
-import { cookies } from "next/headers";
-import { createClient } from "@/utils/supabase/server";
-import Navbar from "../../../src/components/common/Navbar";
 import WebflowSync from "../../../src/components/admin/WebflowSync";
+import Navbar from "../../../src/components/common/Navbar";
 import Footer from "../../../src/components/homepage/Footer";
-import { redirect } from "next/navigation";
 
 export default async function AdminPage() {
     const cookieStore = cookies();

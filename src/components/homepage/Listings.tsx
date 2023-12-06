@@ -1,11 +1,10 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
-
-import ListingCard from "../listings/ListingCard";
+import React from "react";
 
 import { poppins } from "../../helpers/loadFont";
+import ListingCard from "../listings/ListingCard";
 
 const Listings = () => {
     return (

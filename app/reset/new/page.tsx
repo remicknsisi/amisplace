@@ -1,12 +1,11 @@
-import React from "react";
-
-import { cookies } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
+import { cookies } from "next/headers";
+import React from "react";
 
 import Navbar from "../../../src/components/common/Navbar";
 import Footer from "../../../src/components/homepage/Footer";
-import NewPasswordBody from "../../../src/components/reset-request/NewPasswordBody";
 import Layout from "../../../src/components/layout";
+import NewPasswordBody from "../../../src/components/reset-request/NewPasswordBody";
 
 const ResetNew = async () => {
     const cookieStore = cookies();

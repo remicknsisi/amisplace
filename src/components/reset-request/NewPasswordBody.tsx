@@ -1,9 +1,9 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { FormEvent, useState } from "react";
 
 import { poppins } from "../../helpers/loadFont";
-import { useRouter } from "next/navigation";
 
 const NewPasswordBody = () => {
     const router = useRouter();

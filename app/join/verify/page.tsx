@@ -1,7 +1,6 @@
-import React from "react";
-
-import { cookies } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
+import { cookies } from "next/headers";
+import React from "react";
 
 import Navbar from "../../../src/components/common/Navbar";
 import Footer from "../../../src/components/homepage/Footer";

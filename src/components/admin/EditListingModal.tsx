@@ -1,5 +1,5 @@
-import React, { FormEvent, useState } from "react";
 import { Database } from "@/lib/database.types";
+import React, { FormEvent, useState } from "react";
 
 type Listing = Database["public"]["Tables"]["listings"]["Row"];
 

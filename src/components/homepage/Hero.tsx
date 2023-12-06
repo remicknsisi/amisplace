@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-
-import TravelButton from "../common/TravelButton";
+import React, { useEffect, useState } from "react";
 
 import { poppins } from "../../helpers/loadFont";
+import TravelButton from "../common/TravelButton";
 
 interface ImageProps {
     src: string;

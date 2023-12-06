@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import { Database } from "@/lib/database.types";
 import { motion } from "framer-motion";
+import React, { useState } from "react";
 
 import ListingCard from "./ListingCard";
-import { Database } from "@/lib/database.types";
 
 type FilterType = "available" | "all";
 

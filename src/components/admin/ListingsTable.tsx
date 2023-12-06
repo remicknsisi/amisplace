@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
 import { Database } from "@/lib/database.types";
+import React, { useState } from "react";
+
 import EditListingModal from "./EditListingModal";
 
 type Listing = Database["public"]["Tables"]["listings"]["Row"];

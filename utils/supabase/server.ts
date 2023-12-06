@@ -1,6 +1,6 @@
-import { createServerClient, type CookieOptions } from "@supabase/ssr";
-import { cookies } from "next/headers";
 import type { Database } from "@/lib/database.types";
+import { type CookieOptions, createServerClient } from "@supabase/ssr";
+import { cookies } from "next/headers";
 
 // Imported from https://github.com/vercel/next.js/blob/canary/examples/with-supabase/utils/supabase/server.ts
 export const createClient = (cookieStore: ReturnType<typeof cookies>) => {

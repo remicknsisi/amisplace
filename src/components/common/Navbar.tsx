@@ -1,13 +1,11 @@
 "use client";
 
+import { Session } from "@supabase/supabase-js";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-import { useRouter } from "next/navigation";
-
-import { poppins } from "../../helpers/loadFont";
-
 import HamburgerIcon from "../../../public/assets/logos/hamburger_icon";
-import { Session } from "@supabase/supabase-js";
+import { poppins } from "../../helpers/loadFont";
 
 interface NavbarProps {
     requiresPadding?: boolean;

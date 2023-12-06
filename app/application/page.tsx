@@ -1,14 +1,13 @@
+import { nullsToUndefined } from "@/utils/helpers";
+import { createClient } from "@/utils/supabase/server";
+import { profilePartialSchema } from "@/utils/zod-schemas/profile";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import React from "react";
 
-import { cookies } from "next/headers";
-import { createClient } from "@/utils/supabase/server";
-
+import ApplicationBody from "../../src/components/application/ApplicationBody";
 import Navbar from "../../src/components/common/Navbar";
 import Footer from "../../src/components/homepage/Footer";
-import ApplicationBody from "../../src/components/application/ApplicationBody";
-import { redirect } from "next/navigation";
-import { profilePartialSchema } from "@/utils/zod-schemas/profile";
-import { nullsToUndefined } from "@/utils/helpers";
 
 const Application = async () => {
     const cookieStore = cookies();

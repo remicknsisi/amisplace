@@ -1,12 +1,12 @@
-import React from "react";
+import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { createClient } from "@/utils/supabase/server";
+import React from "react";
 
-import Footer from "../../src/components/homepage/Footer";
-import LoginBody from "../../src/components/login/LoginBody";
 import Navbar from "../../src/components/common/Navbar";
+import Footer from "../../src/components/homepage/Footer";
 import Layout from "../../src/components/layout";
+import LoginBody from "../../src/components/login/LoginBody";
 
 export default async function Login() {
     const cookieStore = cookies();

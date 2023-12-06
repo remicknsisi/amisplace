@@ -1,11 +1,10 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
-
-import BenefitsCard from "./BenefitsCard";
+import React from "react";
 
 import { poppins } from "../../helpers/loadFont";
+import BenefitsCard from "./BenefitsCard";
 
 const Benefits = () => {
     return (

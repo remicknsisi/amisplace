@@ -1,10 +1,10 @@
 "use client";
 
-import React, { FormEvent, useState } from "react";
+import { profilePartialType } from "@/utils/zod-schemas/profile";
 import { useRouter } from "next/navigation";
+import React, { FormEvent, useState } from "react";
 
 import { poppins } from "../../helpers/loadFont";
-import { profilePartialType } from "@/utils/zod-schemas/profile";
 
 enum EntranceStatus {
     KNOWN = "known",

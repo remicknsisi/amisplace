@@ -2,9 +2,8 @@
 
 import React from "react";
 
-import FAQAccordionRow from "./FAQAccordionRow";
-
 import data from "../../../public/text/FAQs.json";
+import FAQAccordionRow from "./FAQAccordionRow";
 
 const FAQs = () => {
     const { faqs } = data;

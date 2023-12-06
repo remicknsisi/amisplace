@@ -1,11 +1,11 @@
+import { createClient } from "@/utils/supabase/server";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import React from "react";
 
-import Footer from "../../../src/components/homepage/Footer";
 import ListingsTable from "../../../src/components/admin/ListingsTable";
 import Navbar from "../../../src/components/common/Navbar";
-import { cookies } from "next/headers";
-import { createClient } from "@/utils/supabase/server";
-import { redirect } from "next/navigation";
+import Footer from "../../../src/components/homepage/Footer";
 
 const EditListingsPage = async () => {
     const cookieStore = cookies();

@@ -1,12 +1,11 @@
-import React from "react";
-
-import { cookies } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
+import { cookies } from "next/headers";
+import React from "react";
 
 import Navbar from "../../../src/components/common/Navbar";
 import Footer from "../../../src/components/homepage/Footer";
-import ResetRequestBody from "../../../src/components/reset-request/ResetRequestBody";
 import Layout from "../../../src/components/layout";
+import ResetRequestBody from "../../../src/components/reset-request/ResetRequestBody";
 
 const Reset = async () => {
     const cookieStore = cookies();

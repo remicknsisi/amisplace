@@ -1,12 +1,10 @@
 "use client";
 
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 
-import { motion } from "framer-motion";
-
-import ProcessTab from "./ProcessTab";
-
 import { poppins } from "../../helpers/loadFont";
+import ProcessTab from "./ProcessTab";
 
 const Process = () => {
     const [activeTab, setActiveTab] = useState("Guest");
