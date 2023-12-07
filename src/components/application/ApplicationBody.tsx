@@ -18,8 +18,8 @@ const ApplicationBody = ({ profile }: { profile: profilePartialType }) => {
         profile.application_referral_last_name
             ? EntranceStatus.KNOWN
             : profile.application_heard_from
-            ? EntranceStatus.UNKNOWN
-            : null;
+              ? EntranceStatus.UNKNOWN
+              : null;
     const [optionSelected, setOptionSelected] = useState<EntranceStatus | null>(
         defaultEntranceStatus
     );
