@@ -61,11 +61,11 @@ const AboutBody = () => {
                         />
                     </motion.div>
                     <div className="absolute inset-y-0 left-auto right-0 z-[-1] h-[75rem] opacity-100 md:h-[80rem] lg:h-full">
-                        <div className="relative right-0 h-full w-[56rem] md:-right-[130px] md:right-0">
+                        <div className="relative right-0 h-full w-[56rem]">
                             <img
                                 src="/assets/decorative-ring.svg"
                                 alt="Background ring"
-                                className={`h-full w-full origin-top object-cover transition-opacity transition-transform duration-1000 md:object-left-top${
+                                className={`h-full w-full origin-top object-cover transition-opacity duration-1000 md:object-left-top${
                                     isLoaded
                                         ? "scale-y-100 opacity-100"
                                         : "scale-y-70 opacity-0"
