@@ -35,6 +35,8 @@ const ApplicationBody = ({ profile }: { profile: profilePartialType }) => {
 
         const data = await response.json();
         if (data?.success) {
+            // Refreshing the page's data so that if the user comes back to this page the data will be fresh
+            router.refresh();
             router.push("/host/interested");
         } else {
             // TODO: deal with error
