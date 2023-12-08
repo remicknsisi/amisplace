@@ -1,5 +1,5 @@
-import { Database } from "@/lib/database.types";
 import React, { FormEvent, useState } from "react";
+import { Database } from "@/lib/database.types";
 
 type Listing = Database["public"]["Tables"]["listings"]["Row"];
 
@@ -32,45 +32,45 @@ const EditListingModal = ({ onClose, listing }: EditListingModalProps) => {
     }
 
     return (
-        <div className="fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center">
-            <div className="bg-opacity-50/50 absolute inset-0 bg-black"></div>
+        <div className="fixed left-0 top-0 flex h-full w-full items-center justify-center">
+            <div className="absolute inset-0 bg-black/50"></div>
             {isLoading ? (
-                <div className="z-10 max-w-md rounded-md bg-white p-6">
+                <div className="z-10 rounded-md bg-white p-5">
                     <p>Submitting changes...</p>
                 </div>
             ) : (
-                <div className="relative z-10 max-w-md rounded-md bg-white p-6">
+                <div className="z-10 rounded-md bg-white p-5">
                     <div className="flex items-center justify-between">
                         <p className="text-center text-lg font-bold">
                             Edit Listing
                         </p>
                         <button
-                            className="mb-2 rounded-md bg-gray-200 px-4 py-2 hover:bg-gray-300"
+                            className="rounded-md bg-gray-200 px-4 py-2 hover:bg-gray-300"
                             onClick={onClose}
                         >
                             X
                         </button>
                     </div>
                     <form onSubmit={onSubmit}>
-                        <label className="mb-4 block font-bold opacity-70">
+                        <label className="mb-4 block font-bold text-slate-500">
                             Available Dates:{" "}
                         </label>
                         <input
                             type="text"
                             defaultValue={listing?.available_dates_string ?? ""}
                             name="available_dates_string"
-                            className="mb-2 w-auto overflow-auto rounded-md border border-gray-300 px-2 py-1 text-gray-500 focus:outline-none"
+                            className="rounded-md border border-gray-300 px-2 py-1 text-gray-500"
                         />
                         <br />
                         <br />
-                        <label className="mb-4 block font-bold opacity-70">
+                        <label className="mb-4 block font-bold text-slate-500">
                             Price:{" "}
                         </label>
                         <input
                             type="number"
                             defaultValue={listing?.price ?? 0}
                             name="price"
-                            className="mb-2 w-auto overflow-auto rounded-md border border-gray-300 px-2 py-1 text-gray-500 focus:outline-none"
+                            className="rounded-md border border-gray-300 px-2 py-1 text-gray-500"
                         />
                         <br />
                         <br />

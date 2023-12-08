@@ -1,8 +1,7 @@
 "use client";
 
-import { Database } from "@/lib/database.types";
 import React, { useState } from "react";
-
+import { Database } from "@/lib/database.types";
 import EditListingModal from "./EditListingModal";
 
 type Listing = Database["public"]["Tables"]["listings"]["Row"];
@@ -30,83 +29,56 @@ const ListingsTable = ({ listings }: ListingsTableProps) => {
     );
 
     return (
-        <div className="px-5 md:px-8 lg:px-16">
-            <div className="mx-auto w-full max-w-[80rem]">
-                <div className="mb-28 grid items-center justify-center gap-x-10 gap-y-12 pt-16 sm:grid-cols-2 lg:grid-cols-[1fr,1fr]">
-                    <div className="mb-6 text-center">
-                        <h1 className="mb-4 text-center text-[1.5rem] font-bold md:text-2xl lg:text-3xl">
-                            Listings Editor
-                        </h1>
-                        <div className="mx-auto grid max-w-[34rem] sm:max-w-none sm:grid-cols-[1fr,1fr] lg:grid-cols-[1fr,1fr,1fr]">
-                            <table className="w-full sm:block">
-                                <thead>
-                                    <tr className="bg-teal-400">
-                                        <th className="hidden p-3 text-left md:table-cell">
-                                            Host
-                                        </th>
-                                        <th className="hidden p-3 text-left md:table-cell">
-                                            Location
-                                        </th>
-                                        <th className="hidden p-3 text-left md:table-cell">
-                                            Price
-                                        </th>
-                                        <th className="hidden p-3 text-left md:table-cell">
-                                            Area
-                                        </th>
-                                        <th className="hidden p-3 text-left md:table-cell">
-                                            More Details Link
-                                        </th>
-                                        <th className="hidden p-3 text-left md:table-cell">
-                                            Edit
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody className="flex-1">
-                                    {listings.map((listing) => (
-                                        <tr
-                                            key={listing.id}
-                                            className="mb-2 flex flex-none flex-col flex-wrap sm:mb-0 sm:table-row"
-                                        >
-                                            <td className="border border-gray-300 p-3">
-                                                {listing.host || ""}
-                                            </td>
-                                            <td className="border border-gray-300 p-3">
-                                                {listing.location || ""}
-                                            </td>
-                                            <td className="border border-gray-300 p-3">
-                                                ${listing.price || 0}
-                                            </td>
-                                            <td className="border border-gray-300 p-3">
-                                                {listing.area || ""}
-                                            </td>
-                                            <td className="border border-gray-300 p-3">
-                                                {listing.more_details_link ||
-                                                    ""}
-                                            </td>
-                                            <td
-                                                className="hidden cursor-pointer border border-gray-300 p-3 text-red-400 hover:bg-gray-100 hover:font-medium hover:text-red-600 md:table-cell"
-                                                onClick={() =>
-                                                    toggleModal(listing)
-                                                }
-                                            >
-                                                ✎
-                                            </td>
-                                            <td
-                                                className="border border-gray-300 bg-teal-400 p-3 font-bold sm:table-cell md:hidden"
-                                                onClick={() =>
-                                                    toggleModal(listing)
-                                                }
-                                            >
-                                                Edit ✎
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                            {isModalOpen ? modal : null}
-                        </div>
-                    </div>
-                </div>
+        <div className="m-10">
+            <h1 className="p-10 text-center text-2xl font-bold lg:text-3xl">
+                Listings Editor
+            </h1>
+            <div className="flex justify-center">
+                <table className="">
+                    <thead className="border bg-slate-200">
+                        <tr>
+                            <th className="hidden md:table-cell">Host</th>
+                            <th className="hidden md:table-cell">Location</th>
+                            <th className="hidden md:table-cell">Price</th>
+                            <th className="hidden md:table-cell">Area</th>
+                            <th className="hidden md:table-cell">
+                                More Details Link
+                            </th>
+                            <th className="hidden p-2 md:table-cell">Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody className="">
+                        {listings.map((listing) => (
+                            <tr
+                                key={listing.id}
+                                className="mb-2 flex flex-col border text-center sm:table-row sm:text-left"
+                            >
+                                <td className="border p-2">
+                                    {listing.host || ""}
+                                </td>
+                                <td className="border p-2">
+                                    {listing.location || ""}
+                                </td>
+                                <td className="border p-2">
+                                    ${listing.price || 0}
+                                </td>
+                                <td className="border p-2">
+                                    {listing.area || ""}
+                                </td>
+                                <td className="border p-2">
+                                    {listing.more_details_link || ""}
+                                </td>
+                                <td
+                                    className="border p-2 text-center hover:bg-slate-100"
+                                    onClick={() => toggleModal(listing)}
+                                >
+                                    ✎
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+                {isModalOpen ? modal : null}
             </div>
         </div>
     );
