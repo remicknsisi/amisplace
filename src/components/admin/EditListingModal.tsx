@@ -1,5 +1,5 @@
-import React, { FormEvent, useState } from "react";
 import { Database } from "@/lib/database.types";
+import React, { FormEvent, useState } from "react";
 
 type Listing = Database["public"]["Tables"]["listings"]["Row"];
 
@@ -15,7 +15,7 @@ const EditListingModal = ({ onClose, listing }: EditListingModalProps) => {
     async function onSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
-        setIsLoading(true);
+        // setIsLoading(true);
 
         const response = await fetch(`/listings/${listing?.id}`, {
             method: "PATCH",
@@ -80,10 +80,10 @@ const EditListingModal = ({ onClose, listing }: EditListingModalProps) => {
                         >
                             Submit Changes
                         </button>
-                        <p className="-mt-4 mb-6 text-sm text-red-500">
-                            {errorMessage}
-                        </p>
                     </form>
+                    <p className="-mt-4 mb-6 text-sm text-red-500">
+                        {errorMessage}
+                    </p>
                 </div>
             )}
         </div>

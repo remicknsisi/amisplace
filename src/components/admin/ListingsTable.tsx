@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
 import { Database } from "@/lib/database.types";
+import React, { useState } from "react";
+
 import EditListingModal from "./EditListingModal";
 
 type Listing = Database["public"]["Tables"]["listings"]["Row"];
@@ -69,10 +70,16 @@ const ListingsTable = ({ listings }: ListingsTableProps) => {
                                     {listing.more_details_link || ""}
                                 </td>
                                 <td
-                                    className="border p-2 text-center hover:bg-slate-100"
+                                    className="hidden border p-2 text-center hover:bg-slate-100 md:table-cell"
                                     onClick={() => toggleModal(listing)}
                                 >
                                     ✎
+                                </td>
+                                <td
+                                    className="border bg-green p-2 text-center font-bold text-white md:hidden"
+                                    onClick={() => toggleModal(listing)}
+                                >
+                                    Edit
                                 </td>
                             </tr>
                         ))}
